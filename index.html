@@ -1,0 +1,890 @@
+<!doctype html><html lang="zh-Hant-HK"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>北九州家庭遊 2027</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@700;900&display=swap">
+<style id="trip-css">
+/* Layout: a timetable journal. Sticky tab rail over a cool washi ground; every day carries its own line colour, like a route strip on a station map. */
+:root{
+  --paper:#eef1ed; --card:#fbfcfa; --sunk:#e2e8e3; --ink:#18211d; --ink2:#4a5751; --ink3:#6b7871; --line:#d2dad4;
+  --accent:#23573f; --accent-ink:#ffffff; --accent-soft:#d8e8de;
+  --d1:#a6435b; --d2:#2c6a4d; --d3:#1d5f9f; --d4:#a2522c; --d5:#94700f;
+  --ok:#2a7549; --ok-soft:#dcefe3; --warn:#8f600c; --warn-soft:#f5e9cc; --bad:#a93a32; --bad-soft:#f5dcd8; --info-soft:#e3e9f3; --info:#2f4f7f;
+  --shadow:0 1px 2px rgba(20,30,25,.05),0 6px 18px rgba(20,30,25,.05);
+  --f-display:"Noto Serif TC","Songti TC","PMingLiU",serif;
+  --f-body:"Noto Sans TC","PingFang TC","Microsoft JhengHei","Heiti TC",system-ui,sans-serif;
+  --f-mono:"DM Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#101513; --card:#171f1b; --sunk:#1f2924; --ink:#e5ebe7; --ink2:#a9b6af; --ink3:#86938c; --line:#2b3631;
+  --accent:#7cc39b; --accent-ink:#0b1a12; --accent-soft:#1d3328;
+  --d1:#e58aa0; --d2:#6fc497; --d3:#74abe8; --d4:#e6936a; --d5:#dcb552;
+  --ok:#6fc497; --ok-soft:#1a3125; --warn:#e2b45c; --warn-soft:#362c16; --bad:#ee8c82; --bad-soft:#3a1f1c; --info-soft:#1d2738; --info:#9dbbe6;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 18px rgba(0,0,0,.25); color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --paper:#101513; --card:#171f1b; --sunk:#1f2924; --ink:#e5ebe7; --ink2:#a9b6af; --ink3:#86938c; --line:#2b3631;
+  --accent:#7cc39b; --accent-ink:#0b1a12; --accent-soft:#1d3328;
+  --d1:#e58aa0; --d2:#6fc497; --d3:#74abe8; --d4:#e6936a; --d5:#dcb552;
+  --ok:#6fc497; --ok-soft:#1a3125; --warn:#e2b45c; --warn-soft:#362c16; --bad:#ee8c82; --bad-soft:#3a1f1c; --info-soft:#1d2738; --info:#9dbbe6;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 18px rgba(0,0,0,.25); color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.65;margin:0;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+a{color:var(--accent)}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.boot{padding:24px;color:var(--ink2)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--ink2)}
+.small{font-size:13px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.25}
+h2{font-size:24px;font-weight:900}
+h3{font-size:18px;font-weight:700}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;color:var(--ink3);text-transform:uppercase}
+
+/* masthead */
+.mast{padding-block:28px 20px}
+.mast-grid{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px 32px;align-items:end}
+.mast h1{font-weight:900;font-size:clamp(32px,5.4vw,52px);letter-spacing:.02em;margin-top:6px}
+.route{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin-top:12px;font-weight:500}
+.route .stn{display:inline-flex;align-items:center;gap:6px}
+.route .dot{width:10px;height:10px;border-radius:50%;background:var(--dc);display:inline-block}
+.route .arr{color:var(--ink3)}
+.cd{text-align:right}
+.cd-num{font-family:var(--f-mono);font-size:46px;line-height:1;font-weight:500}
+.cd-num span{font-family:var(--f-body);font-size:16px;margin-left:4px;color:var(--ink2)}
+.flights{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.ticket{display:grid;grid-template-columns:auto auto auto;align-items:center;gap:4px 12px;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:8px 14px;position:relative}
+.ticket::before,.ticket::after{content:"";position:absolute;top:50%;width:10px;height:10px;margin-top:-5px;border-radius:50%;background:var(--paper);border:1px solid var(--line)}
+.ticket::before{left:-6px}.ticket::after{right:-6px}
+.ticket .lbl{grid-column:1/-1;font-size:12px;color:var(--ink3)}
+.ticket .t{font-family:var(--f-mono);font-size:18px;font-weight:500}
+.ticket .ap{font-size:12px;color:var(--ink2);display:block;font-family:var(--f-body)}
+.ticket .line{width:38px;height:1px;background:var(--ink3);position:relative}
+
+/* tabs */
+.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--paper);border-block:1px solid var(--line)}
+.tabs-inner{display:flex;align-items:center;gap:8px;padding-block:8px}
+.tablist{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;min-width:0;flex:1}
+.tablist::-webkit-scrollbar{display:none}
+.tab{appearance:none;border:0;background:transparent;font:inherit;font-weight:500;color:var(--ink2);padding:6px 12px;border-radius:999px;white-space:nowrap;cursor:pointer}
+.tab:hover{color:var(--ink)}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--paper)}
+.who-chip{flex:none;font-size:13px;color:var(--ink2);white-space:nowrap}
+.who-chip b{color:var(--ink)}
+button{font:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.panel{padding-block:24px 120px;display:grid;gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px}
+.section-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 16px}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.stack{display:grid;gap:12px}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+
+/* pills */
+.pill{display:inline-flex;align-items:center;gap:4px;font-size:12px;line-height:1.5;padding:1px 8px;border-radius:999px;border:1px solid var(--line);color:var(--ink2);background:var(--card);white-space:nowrap}
+.pill.ok{background:var(--ok-soft);color:var(--ok);border-color:transparent}
+.pill.warn{background:var(--warn-soft);color:var(--warn);border-color:transparent}
+.pill.bad{background:var(--bad-soft);color:var(--bad);border-color:transparent}
+.pill.info{background:var(--info-soft);color:var(--info);border-color:transparent}
+.pill.wish{background:var(--d1);color:var(--card);border-color:transparent}
+.pill.train{background:var(--d2);color:var(--card);border-color:transparent}
+.pill.onsen{background:var(--d3);color:var(--card);border-color:transparent}
+.pill.day{background:var(--dc);color:var(--card);border-color:transparent;font-family:var(--f-mono)}
+.pill.mode{font-family:var(--f-mono);font-size:11px;letter-spacing:.04em}
+
+/* buttons */
+.btn{appearance:none;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:7px 14px;border-radius:8px;cursor:pointer;font-weight:500;font-size:14px}
+.btn:hover{border-color:var(--ink3)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.small{padding:3px 10px;font-size:13px}
+.btn.ghost{background:transparent}
+.btn[disabled]{opacity:.5;cursor:not-allowed}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{appearance:none;border:1px solid var(--line);background:var(--card);color:var(--ink2);padding:5px 12px;border-radius:999px;cursor:pointer;font-size:14px}
+.chip[aria-pressed="true"]{background:var(--dc,var(--ink));border-color:var(--dc,var(--ink));color:var(--card)}
+
+/* overview */
+.daystrip{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.dcard{border:1px solid var(--line);border-top:5px solid var(--dc);border-radius:10px;padding:12px;background:var(--card);cursor:pointer;text-align:left;color:var(--ink);display:grid;gap:4px;align-content:start}
+.dcard:hover{border-color:var(--dc)}
+.dcard .dn{font-family:var(--f-mono);font-size:12px;color:var(--dc);font-weight:500}
+.dcard .dt{font-weight:700;font-size:15px;line-height:1.4}
+.dcard .dnight{font-size:12px;color:var(--ink3)}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.stat{border-left:3px solid var(--line);padding:2px 0 2px 12px}
+.stat .v{font-family:var(--f-mono);font-size:26px;font-weight:500;line-height:1.2}
+.stat .k{font-size:13px;color:var(--ink2)}
+.list{list-style:none;margin:0;padding:0;display:grid}
+.list li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}
+.list li:first-child{border-top:0}
+
+/* timeline */
+.dayhead{border-top:6px solid var(--dc);display:grid;gap:6px}
+.dayhead .meta{display:flex;flex-wrap:wrap;gap:8px 14px;color:var(--ink2);font-size:14px}
+.tl{list-style:none;margin:0;padding:0}
+.tl-item{display:grid;grid-template-columns:64px 20px minmax(0,1fr);gap:0 10px}
+.tl-time{font-family:var(--f-mono);font-size:14px;font-weight:500;padding-top:14px;text-align:right;color:var(--ink)}
+.tl-rail{position:relative}
+.tl-rail::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:3px;margin-left:-1.5px;background:var(--dc);opacity:.35}
+.tl-item:first-child .tl-rail::before{top:20px}
+.tl-item:last-child .tl-rail::before{bottom:calc(100% - 22px)}
+.tl-rail::after{content:"";position:absolute;left:50%;top:18px;width:12px;height:12px;margin-left:-6px;border-radius:50%;background:var(--card);border:3px solid var(--dc)}
+.tl-body{padding:10px 0 14px;border-bottom:1px solid var(--line);min-width:0}
+.tl-item:last-child .tl-body{border-bottom:0}
+.tl-title{font-weight:700;font-size:16px;display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center}
+.tl-desc{color:var(--ink2);margin-top:4px;font-size:14px}
+.tl-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.knee{font-size:13px;margin-top:6px;display:flex;gap:6px;align-items:flex-start}
+.note-box{width:100%;min-height:72px;border:1px solid var(--line);border-radius:8px;padding:8px 10px;background:var(--card);color:var(--ink);font:inherit;font-size:14px;resize:vertical}
+.fam-note{border-left:3px solid var(--dc,var(--line));padding:4px 0 4px 10px;font-size:14px}
+.fam-note b{font-weight:700}
+
+/* votes */
+.vote{display:grid;gap:12px}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.opt{appearance:none;text-align:left;border:1px solid var(--line);border-radius:10px;padding:12px;background:var(--card);color:var(--ink);cursor:pointer;display:grid;gap:6px;align-content:start;position:relative}
+.opt:hover{border-color:var(--ink3)}
+.opt[aria-pressed="true"]{border-color:var(--accent);box-shadow:inset 0 0 0 2px var(--accent)}
+.opt .ot{font-weight:700}
+.opt .od{font-size:13px;color:var(--ink2);white-space:pre-line}
+.opt .mine{font-size:12px;color:var(--accent);font-weight:700}
+.opt.decided{background:var(--accent-soft)}
+.voters{display:flex;flex-wrap:wrap;gap:4px}
+.voter{font-size:12px;padding:0 7px;border-radius:999px;background:var(--sunk);color:var(--ink)}
+.stamp{display:inline-block;font-size:12px;font-weight:700;color:var(--accent);border:1.5px solid var(--accent);border-radius:4px;padding:0 6px;transform:rotate(-2deg)}
+.who-pick{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.preview{width:100%;min-height:180px;font-family:var(--f-mono);font-size:12px;border:1px solid var(--line);border-radius:8px;padding:10px;background:var(--sunk);color:var(--ink);resize:vertical}
+
+/* hotels */
+.hcands{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.hc{border:1px solid var(--line);border-radius:10px;padding:14px;display:grid;gap:8px;align-content:start;background:var(--card)}
+.hc.chosen{border-color:var(--accent);box-shadow:inset 0 0 0 2px var(--accent)}
+.hc .hn{font-weight:700;font-size:16px;line-height:1.4}
+.hc .he{font-size:12px;color:var(--ink3)}
+.hc .price{font-family:var(--f-mono);font-size:20px;font-weight:500}
+.hc .price small{font-family:var(--f-body);font-size:12px;color:var(--ink2);font-weight:400}
+.hc ul{margin:0;padding-left:18px;font-size:13px;color:var(--ink2)}
+
+/* tasks */
+.task{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 16px;padding:12px 0;border-top:1px solid var(--line);align-items:start}
+.task:first-child{border-top:0}
+.task .tt{font-weight:700}
+.task .tn{font-size:13px;color:var(--ink2)}
+.task .side{display:grid;gap:6px;justify-items:end;text-align:right}
+.task.done .tt{text-decoration:line-through;color:var(--ink3)}
+select,input[type=text]{font:inherit;font-size:13px;border:1px solid var(--line);border-radius:6px;padding:3px 6px;background:var(--card);color:var(--ink)}
+input[type=text]{width:100%}
+
+/* map */
+.mapbox{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--sunk)}
+.mapbox svg{display:block;width:100%;height:auto}
+.loopmap{min-width:640px}
+.pinmap{min-width:300px}
+.sea{font-family:var(--f-display);font-size:13px;fill:var(--ink3);letter-spacing:.3em}
+.st{font-size:13px;font-weight:700;fill:var(--ink)}
+.stsub{font-size:11px;fill:var(--ink2)}
+.seg{font-size:11px;font-weight:700}
+.mapbg{fill:var(--sunk)}
+.grid{stroke:var(--line);stroke-width:1px}
+.node{fill:var(--card);stroke:var(--ink);stroke-width:2.5px}
+.node-in{fill:var(--ink)}
+.pin{stroke:var(--card);stroke-width:2px}
+.pinnum{font-family:var(--f-mono);font-size:12px;font-weight:700;fill:var(--card)}
+.bar{stroke:var(--ink);stroke-width:2px}
+.maptxt{font-size:11px;fill:var(--ink2)}
+.north{fill:var(--ink2)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:13px;color:var(--ink2)}
+.legend i{display:inline-block;width:22px;height:5px;border-radius:3px;background:var(--dc);vertical-align:middle;margin-right:6px}
+.maplist{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.maplist li{display:grid;grid-template-columns:26px minmax(0,1fr) auto;gap:8px;align-items:center;font-size:14px}
+.maplist .num{width:22px;height:22px;border-radius:50%;background:var(--dc);color:var(--card);font-family:var(--f-mono);font-size:12px;display:grid;place-items:center}
+
+/* info */
+table.t{width:100%;border-collapse:collapse;font-size:14px}
+table.t th,table.t td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+table.t th{font-weight:700;color:var(--ink2);font-size:13px}
+table.t td.num{text-align:right;font-family:var(--f-mono);white-space:nowrap}
+.tablebox{overflow-x:auto}
+.prose{max-width:68ch}
+.prose ul{padding-left:18px;margin:6px 0}
+.prose li{margin:3px 0}
+
+/* save bar + toast */
+.savebar{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--ink);color:var(--paper);padding-top:10px;padding-bottom:calc(10px + env(safe-area-inset-bottom,0px))}
+.savebar .wrap{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;justify-content:space-between}
+.savebar .btn{border-color:transparent}
+.toast{position:fixed;left:50%;bottom:calc(80px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:30;background:var(--ink);color:var(--paper);padding:9px 16px;border-radius:8px;font-size:14px;max-width:calc(100% - 32px);box-shadow:var(--shadow)}
+.editbadge{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--accent);font-weight:700}
+
+@media (max-width:860px){
+  .daystrip{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .grid3{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:640px){
+  .mast-grid{grid-template-columns:minmax(0,1fr)}
+  .cd{text-align:left}
+  .grid2{grid-template-columns:minmax(0,1fr)}
+  .tl-item{grid-template-columns:48px 16px minmax(0,1fr);gap:0 8px}
+  .tl-time{font-size:13px}
+  .task{grid-template-columns:minmax(0,1fr)}
+  .task .side{justify-items:start;text-align:left}
+  .who-chip{display:none}
+}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+</style>
+<div id="app"><p class="boot">載入中…</p></div>
+<script type="application/json" id="trip-state">{"v":1,"updated":"2026-11-22","decisions":{},"hotelPick":{},"hotelBooked":{},"tasks":{"t1":{"owner":"clinton","status":"todo","note":""},"t2":{"owner":"wife","status":"todo","note":""},"t3":{"owner":"wife","status":"todo","note":""},"t4":{"owner":"wife","status":"todo","note":""},"t5":{"owner":"wife","status":"todo","note":""},"t6":{"owner":"clinton","status":"todo","note":""},"t7":{"owner":"clinton","status":"todo","note":""},"t8":{"owner":"clinton","status":"todo","note":""},"t9":{"owner":"clinton","status":"todo","note":""},"t10":{"owner":"sis","status":"todo","note":""},"t11":{"owner":"sis","status":"todo","note":""},"t12":{"owner":"sis","status":"todo","note":""},"t13":{"owner":"clinton","status":"todo","note":""},"t14":{"owner":"clinton","status":"todo","note":""},"t15":{"owner":"clinton","status":"todo","note":""},"t16":{"owner":"clinton","status":"todo","note":""}},"family":{}}</script>
+<script id="trip-app">(function main(){
+"use strict";
+var PAGE_HEAD='<title>北九州家庭遊 2027</title>\n<meta name="claude:viewport-fit-sides" content="cover">\n<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@700;900&display=swap">';
+var APP_FALLBACK='<p class="boot">載入中…</p>';
+var SKEL_RESET=':root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}';
+var SCRIPT_END='</scr'+'ipt>';
+
+/* ---------- data ---------- */
+var PEOPLE=[{id:'clinton',name:'Clinton'},{id:'wife',name:'Charlotte'},{id:'sis',name:'Lorraine'},{id:'mum',name:'媽媽'}];
+var PNAME={};PEOPLE.forEach(function(p){PNAME[p.id]=p.name;});
+var VOTERS=PEOPLE.filter(function(p){return p.id!=='mum';});
+function isVoter(id){return VOTERS.some(function(p){return p.id===id;});}
+
+var PLACES={
+  airport:{n:'福岡機場（國際線）',q:'福岡空港 国際線ターミナル',lat:33.5859,lon:130.4592},
+  hakataSt:{n:'博多駅（酒店一帶）',q:'博多駅',lat:33.5897,lon:130.4207},
+  dazaifu:{n:'太宰府天滿宮',q:'太宰府天満宮',lat:33.5215,lon:130.5349},
+  musashiza:{n:'すみ劇場 むさし坐',q:'すみ劇場 むさし坐 渡辺通',lat:33.5848,lon:130.4027},
+  yufuinSt:{n:'由布院駅',q:'由布院駅',lat:33.2663,lon:131.3552},
+  yunotsubo:{n:'湯之坪街道',q:'湯の坪街道 由布院',lat:33.2671,lon:131.3620},
+  kinrinko:{n:'金鱗湖',q:'金鱗湖',lat:33.2667,lon:131.3692},
+  kirara:{n:'由布院旅館（暫定：きらら）',q:'由布岳一望の宿 きらら',lat:33.2544,lon:131.3628},
+  beppuSt:{n:'別府駅',q:'別府駅',lat:33.2793,lon:131.5005},
+  jigokumushi:{n:'地獄蒸し工房 鉄輪',q:'地獄蒸し工房 鉄輪',lat:33.3166,lon:131.4789},
+  umijigoku:{n:'海地獄（鐵輪地獄群）',q:'海地獄 別府',lat:33.3164,lon:131.4722},
+  chinoike:{n:'血の池地獄・龍巻地獄',q:'血の池地獄',lat:33.3304,lon:131.4856},
+  matsubaya:{n:'別府旅館（暫定：松葉屋）',q:'料亭 松葉屋 別府',lat:33.2815,lon:131.4761},
+  ropeway:{n:'別府纜車（鶴見岳）',q:'別府ロープウェイ',lat:33.2857,lon:131.4496},
+  kokuraSt:{n:'小倉駅',q:'小倉駅',lat:33.8866,lon:130.8827},
+  mojikoSt:{n:'門司港駅',q:'門司港駅',lat:33.9451,lon:130.9617},
+  railmuseum:{n:'九州鐵道紀念館',q:'九州鉄道記念館',lat:33.9434,lon:130.9613},
+  bluewing:{n:'藍翼橋・門司港懷舊區',q:'ブルーウィングもじ',lat:33.9466,lon:130.9631},
+  nakasu:{n:'中洲（屋台／晚餐）',q:'中洲 屋台',lat:33.5925,lon:130.4061},
+  ohori:{n:'大濠公園',q:'大濠公園',lat:33.5862,lon:130.3763},
+  en:{n:'えん發酵溫熱木浴 福岡店',q:'えん発酵温熱木浴 福岡店',lat:33.5846,lon:130.3889},
+  tenjin:{n:'天神地下街・大丸',q:'天神地下街',lat:33.5906,lon:130.3995}
+};
+
+var DAYS=[
+ {id:'d1',n:1,date:'1月18日（一）',title:'抵達福岡・太宰府・むさし坐',color:'var(--d1)',night:'博多（第1晚）',
+  areas:[{name:'福岡市＋太宰府',pts:['airport','hakataSt','dazaifu','musashiza']}],
+  items:[
+   {t:'11:55',title:'抵達福岡機場（國際線）',mode:'飛機',knee:0,p:'airport',desc:'07:50 香港出發。入境同攞行李約 45–60 分鐘。出發前填好 Visit Japan Web，入境快啲。'},
+   {t:'13:00',title:'巴士：國際線 → 博多駅筑紫口',mode:'巴士',knee:0,p:'hakataSt',desc:'西鐵直行巴士約 20–25 分鐘，¥310–400，可以用 IC 卡。'},
+   {t:'13:30',title:'酒店寄存行李＋博多駅午餐',mode:'步行',knee:0,p:'hakataSt',desc:'15:00 先可以入住，先寄存行李。博多駅有博多拉麵、明太子，全部有升降機。'},
+   {t:'14:30',title:'去太宰府',mode:'巴士',knee:0,vote:'d1pm',desc:'博多巴士總站出發約 45 分鐘（班次同車費要再確認）。另一個方法：JR 去二日市，轉西鐵太宰府線，約 55 分鐘。'},
+   {t:'15:15',title:'太宰府天滿宮',mode:'步行',knee:1,p:'dazaifu',tags:['媽媽第一次'],desc:'參道食梅枝餅（推介 かさの家）、隈研吾設計嘅 Starbucks。本殿 2026 年完成大修。開放 06:30–18:30。1 月係考試季，平日人少啲。',kneeNote:'心字池有三條太鼓橋，有斜度同梯級。扶住欄杆慢慢行。'},
+   {t:'17:30',title:'西鐵：太宰府 → 二日市 → 藥院',mode:'西鐵',knee:0,desc:'約 35 分鐘。藥院站行去餐廳約 8 分鐘，或者喺天神搭的士。'},
+   {t:'18:30',title:'晚餐：すみ劇場 むさし坐',mode:'食',knee:null,p:'musashiza',tags:['願望清單','要訂位'],desc:'渡辺通嘅爐端燒居酒屋，招牌係圍爐「原始燒」大沙甸魚同海鮮。17:00–24:00。電話 092-791-4866。評語話好難訂，要盡早訂。',kneeNote:'2 樓有枱，要樓梯。訂位時要求坐 1 樓。'},
+   {t:'20:30',title:'的士返博多酒店',mode:'的士',knee:0,desc:'約 15 分鐘，約 ¥1,500–2,000。'}
+  ]},
+ {id:'d2',n:2,date:'1月19日（二）',title:'ゆふいんの森・由布院',color:'var(--d2)',night:'由布院溫泉旅館',
+  areas:[{name:'由布院',pts:['yufuinSt','yunotsubo','kinrinko','kirara']}],
+  items:[
+   {t:'08:30',title:'退房，大行李留喺博多酒店',mode:'步行',knee:0,p:'hakataSt',desc:'第 4 晚再住同一間，所以大行李可以寄存 2 晚（訂房時寫低）。每人只帶一個細袋去由布院同別府。'},
+   {t:'09:17',title:'ゆふいんの森 1號：博多 → 由布院 11:31',mode:'JR',knee:1,vote:'d2train',tags:['特色列車'],desc:'JR 官網月曆：1 月 19 日呢班用第一代（Ⅰ世）車廂行駛，即係 1989 年原版綠色高底盤列車，約 2 小時 14 分。車上有 buffet 同紀念印章。12 月 19 日 10:00 開賣座位，用北九州 Pass 可以免費劃位。',kneeNote:'第一代車廂冇輪椅升降機。車門有幾級樓梯，有扶手。'},
+   {t:'11:45',title:'由布院駅 → 湯之坪街道午餐',mode:'步行',knee:0,p:'yunotsubo',desc:'駅內有足湯。湯之坪街道由駅行到金鱗湖約 1.5 公里，平路，有少少斜。'},
+   {t:'13:30',title:'金鱗湖＋湯之坪街道',mode:'步行',knee:0,p:'kinrinko',desc:'金鱗湖行一圈約 15 分鐘。街上有蛋糕卷、可樂餅、雜貨。'},
+   {t:'15:00',title:'旅館入住',mode:'的士',knee:null,p:'kirara',desc:'大部分旅館有由布院駅免費接送，要預早預約。',kneeNote:'視乎旅館。媽媽間房揀地面層或者有升降機。'},
+   {t:'18:00',title:'房內露天風呂＋懷石晚餐',mode:'溫泉',knee:0,tags:['私人溫泉'],desc:'兩間房都有自己嘅溫泉，唔使去公眾浴池，紋身冇問題。'}
+  ]},
+ {id:'d3',n:3,date:'1月20日（三）',title:'由布院 → 別府地獄',color:'var(--d3)',night:'別府溫泉旅館',
+  areas:[{name:'別府',pts:['beppuSt','jigokumushi','umijigoku','chinoike','matsubaya']}],
+  items:[
+   {t:'07:15',title:'金鱗湖晨霧',mode:'步行',knee:0,p:'kinrinko',desc:'1 月清晨好凍，湖面會升起霧，約 07:00–08:00 最靚。著夠暖。'},
+   {t:'08:30',title:'旅館早餐、浸湯、退房',mode:'溫泉',knee:0,desc:'約 10:00–11:00 退房。'},
+   {t:'11:00',title:'湯之坪街道買手信 → 由布院駅',mode:'步行',knee:0,p:'yufuinSt',desc:'行李可以寄存喺駅或者旅館。'},
+   {t:'12:34',title:'特急ゆふ：由布院 → 別府 13:31',mode:'JR',knee:1,vote:'d3move',desc:'JR 官網月曆：1 月 20 日 ゆふいんの森 3 號改為普通特急「ゆふ」行駛，同時間、同停站，冇車廂服務員同車內販賣。約 1 小時，經大分。時間係大約，訂位時再確認。12 月 20 日 10:00 開賣。另一個選擇：龜之井巴士，約 1 小時。'},
+   {t:'13:45',title:'別府駅 → 鐵輪',mode:'的士',knee:0,p:'beppuSt',desc:'四個人搭的士約 15 分鐘、約 ¥2,500；巴士約 20–40 分鐘。'},
+   {t:'14:15',title:'午餐：地獄蒸し工房 鉄輪',mode:'食',knee:0,p:'jigokumushi',desc:'用溫泉蒸氣自己蒸海鮮同菜，一家人一齊玩。'},
+   {t:'15:00',title:'別府地獄巡禮',mode:'步行',knee:1,p:'umijigoku',tags:['必去'],desc:'鐵輪一帶步行：海地獄（鈷藍色）、鬼石坊主、竈、鬼山、白池。血の池同龍巻喺柴石，搭車約 10 分鐘。08:00–17:00。7 個地獄共通券約 ¥2,000–2,200（要再確認）。',kneeNote:'大部分平路，有少量斜路同梯級。'},
+   {t:'17:30',title:'旅館入住＋房內溫泉＋晚餐',mode:'溫泉',knee:null,p:'matsubaya',tags:['私人溫泉'],desc:'暫定松葉屋（觀海寺，望到別府灣）。去酒店分頁投票。',kneeNote:'松葉屋別館有升降機。'}
+  ]},
+ {id:'d4',n:4,date:'1月21日（四）',title:'別府 → 門司港 → 博多',color:'var(--d4)',night:'博多（第4晚，同第1晚）',
+  areas:[{name:'別府（朝早）',pts:['matsubaya','ropeway','beppuSt']},{name:'門司港',pts:['mojikoSt','railmuseum','bluewing']}],
+  items:[
+   {t:'08:00',title:'早餐＋朝早活動',mode:'溫泉',knee:null,vote:'d4am',p:'ropeway',desc:'三個選擇：別府纜車上鶴見岳（1 月有機會見到霧凇）、明礬湯之花小屋、或者喺旅館慢慢浸湯。',kneeNote:'纜車站平路；山頂步道有梯級。'},
+   {t:'10:30',title:'退房 → 別府駅',mode:'的士',knee:0,p:'beppuSt',desc:''},
+   {t:'11:00',title:'ソニック：別府 → 小倉',mode:'JR',knee:0,tags:['特色列車'],desc:'藍色 883 系或者白色 885 系特急，約 1 小時 15 分。12 月 21 日 10:00 開賣。'},
+   {t:'12:30',title:'JR：小倉 → 門司港',mode:'JR',knee:0,desc:'約 13 分鐘。'},
+   {t:'12:45',title:'門司港駅＋燒咖喱午餐',mode:'食',knee:0,p:'mojikoSt',desc:'門司港駅係大正時代建築（重要文化財）。燒咖喱係門司港名物。'},
+   {t:'13:45',title:'九州鐵道紀念館',mode:'步行',knee:0,p:'railmuseum',tags:['火車迷'],desc:'舊車輛、模擬駕駛、迷你鐵路（大人都可以坐，¥300）。09:00–17:00，入場約 ¥300–500（要再確認）。'},
+   {t:'15:00',title:'門司港懷舊區',mode:'步行',knee:0,p:'bluewing',desc:'藍翼橋 15:00、16:00 開橋。舊門司三井俱樂部、關門海峽景色。'},
+   {t:'16:30',title:'門司港 → 小倉 → 博多',mode:'JR',knee:0,desc:'小倉轉ソニック或きらめき，約 45 分鐘（北九州 Pass 用得）。新幹線只要 15 分鐘，但 Pass 唔包，要另外買票。'},
+   {t:'18:30',title:'返博多酒店入住，攞返大行李',mode:'步行',knee:0,p:'hakataSt',desc:''},
+   {t:'19:15',title:'晚餐',mode:'食',knee:0,vote:'d4dinner',desc:'選擇：博多水炊き（雞湯鍋）、中洲屋台、もつ鍋。'}
+  ]},
+ {id:'d5',n:5,date:'1月22日（五）',title:'福岡市內・酵素浴 → 回港',color:'var(--d5)',night:'—（20:55 航班）',
+  areas:[{name:'福岡市',pts:['ohori','en','tenjin','hakataSt','airport']}],
+  items:[
+   {t:'09:00',title:'退房，行李寄存酒店',mode:'步行',knee:0,p:'hakataSt',desc:''},
+   {t:'09:45',title:'大濠公園',mode:'地鐵',knee:0,vote:'d5am',p:'ohori',desc:'湖邊平路一圈 2 公里，有湖邊 Starbucks。日本庭園 ¥250。選擇 B：柳川暖桌船（12 月至 2 月限定）＋蒸籠鰻魚飯，要半日。'},
+   {t:'11:30',title:'えん發酵溫熱木浴 福岡店',mode:'地鐵',knee:1,p:'en',tags:['願望清單','要訂位'],desc:'檜木粉發酵浴，私人半個室，約 90 分鐘（其中浸 15 分鐘）。地鐵赤坂站 2 號出口行 7 分鐘，5 樓。營業 11:00–21:30，電話 092-406-3378。要問：價錢、男女可唔可以同一間房。',kneeNote:'要坐低同起身。高血壓或者心臟有問題，先問醫生。媽媽可以選擇唔做，喺附近 cafe 休息。'},
+   {t:'13:15',title:'天神午餐',mode:'步行',knee:0,p:'tenjin',desc:'例如天ぷら ひらお、もつ鍋。'},
+   {t:'14:30',title:'天神地下街／大丸／岩田屋 買手信',mode:'步行',knee:0,p:'tenjin',desc:'2026 年 11 月起日本改為「先付消費稅，離境時退稅」，要喺機場辦手續，預留時間（細節要再確認）。'},
+   {t:'17:30',title:'返博多酒店攞行李',mode:'地鐵',knee:0,p:'hakataSt',desc:''},
+   {t:'18:10',title:'巴士：博多駅筑紫口 → 機場國際線',mode:'巴士',knee:0,desc:'約 20–25 分鐘。'},
+   {t:'18:55',title:'到達機場 → 20:55 起飛 → 23:55 抵港',mode:'飛機',knee:0,p:'airport',desc:'起飛前 2 小時到。'}
+  ]}
+];
+
+var VOTES=[
+ {id:'route',day:'all',short:'路線',q:'整個路線：而家嘅版本，定係最後一日搭いちろく返博多？',opts:[
+   {id:'a',title:'而家嘅版本',desc:'博多 → 由布院 → 別府 → 門司港 → 博多\n・第 1、4 晚住同一間博多酒店，大行李可以留喺酒店。\n・最後一日喺福岡：大濠公園、えん酵素浴、天神買嘢。\n・特色列車：ゆふいんの森（第一代）、ソニック。\n・JR 北九州 Pass 大約抵少少。'},
+   {id:'b',title:'いちろく版本',desc:'博多 2 晚 → 由布院 → 別府 → いちろく返博多\n・第 1 日：博多＋むさし坐。\n・第 2 日：門司港即日來回，夜晚去えん酵素浴（最後受理 20:00）。\n・第 3 日：ゆふいんの森 1 號（第一代）去由布院。\n・第 4 日：由布院 → 別府地獄。\n・第 5 日：いちろく 別府 11:00 → 博多 15:47，車上食午餐，之後去機場。\n・好處：最後一日唔使趕，坐住食午餐返博多。\n・代價：いちろく 每人約 ¥21,000；大行李要跟住走，或者用空港宅急便寄去機場；JR Pass 唔抵；由布院同別府酒店日期改為 1 月 20、21 日，要重新查價。'}]},
+ {id:'d1pm',day:'d1',short:'第1日下午',q:'第 1 日下午去邊？',opts:[
+   {id:'a',title:'太宰府天滿宮',desc:'經典景點，媽媽第一次嚟日本。來回車程約 1.5 小時。'},
+   {id:'b',title:'博多舊市區',desc:'櫛田神社、川端通商店街、運河城。離酒店近，少交通，輕鬆啲。'}]},
+ {id:'d2train',day:'d2',short:'第2日火車班次',q:'第 2 日搭邊班 ゆふいんの森？',opts:[
+   {id:'a',title:'1 號 09:17 → 11:31',desc:'1 月 19 日用第一代（Ⅰ世）原版列車行駛。喺由布院多 1 小時。'},
+   {id:'b',title:'10:11 → 12:32（普通特急ゆふ）',desc:'1 月 19 日 3 號改為普通特急「ゆふ」，唔係 ゆふいんの森。朝早鬆啲。'}]},
+ {id:'d3move',day:'d3',short:'第3日由布院去別府',q:'第 3 日由布院點樣去別府？',opts:[
+   {id:'a',title:'特急ゆふ',desc:'約 1 小時，經大分。用 Pass 免費。1 月 20 日冇 ゆふいんの森 去別府。'},
+   {id:'b',title:'龜之井巴士',desc:'約 1 小時（班次同落車站要再確認）。如果揀巴士，JR Pass 唔抵，買單程飛較平。'}]},
+ {id:'d4am',day:'d4',short:'第4日朝早',q:'第 4 日朝早做咩？',opts:[
+   {id:'a',title:'別府纜車（鶴見岳）',desc:'1 月有機會見到霧凇。山頂好凍。'},
+   {id:'b',title:'明礬湯之花小屋',desc:'睇傳統溫泉粉點樣做，有茅草屋。'},
+   {id:'c',title:'旅館慢慢浸湯',desc:'最輕鬆，10:30 先退房。'}]},
+ {id:'d4dinner',day:'d4',short:'第4日晚餐',q:'第 4 日晚餐食咩？',opts:[
+   {id:'a',title:'博多水炊き',desc:'雞湯鍋，暖，啱長輩。'},
+   {id:'b',title:'中洲屋台',desc:'露天大排檔，夜晚好凍，座位係高凳。'},
+   {id:'c',title:'もつ鍋（牛腸鍋）',desc:'福岡名物。'}]},
+ {id:'d5am',day:'d5',short:'第5日朝早',q:'第 5 日朝早去邊？',opts:[
+   {id:'a',title:'大濠公園',desc:'平路散步，同えん酵素浴好近。'},
+   {id:'b',title:'柳川暖桌船',desc:'冬季限定，坐船＋鰻魚飯。要半日，酵素浴要改到 15:00。上落船要跨步。'}]}
+];
+
+var HOTEL_NIGHTS=[
+ {id:'n1',label:'第 1 及第 4 晚',dates:'1月18日（一）＋1月21日（四）',area:'博多',color:'var(--d1)',
+  note:'兩晚住同一間，19–21 日寄存大行李。價錢係 1 月 18 日 2 間房（每間 2 人，冇早餐）；1 月 21 日價錢未查到，要再確認。',
+  cands:[
+   {id:'blossom',jp:'JR九州ホテル ブラッサム博多中央',en:'JR Kyushu Hotel Blossom Hakata Central',score:'8.8',price:1115,unit:'每間每晚（約）',bath:'一般浴室',knee:0,pros:['博多駅博多口行約 2 分鐘','評分最高'],cancel:'',url:'https://www.booking.com/hotel/jp/jr-kyushu-blossom-hakata-central.html?aid=8132308&checkin=2027-01-18&checkout=2027-01-19&no_rooms=2&group_adults=4&selected_currency=HKD&label=mcp_rid-90b608468dfef16e',q:'JR九州ホテル ブラッサム博多中央'},
+   {id:'oriental',jp:'オリエンタルホテル福岡 博多ステーション',en:'Oriental Hotel Fukuoka Hakata Station',score:'8.3',price:1236,unit:'每間每晚（約）',bath:'一般浴室',knee:0,pros:['筑紫口，機場巴士站好近','有健身室同餐廳'],cancel:'',url:'https://www.booking.com/hotel/jp/centraza-hakata-fukuoka.html?aid=8132308&checkin=2027-01-18&checkout=2027-01-19&no_rooms=2&group_adults=4&selected_currency=HKD&label=mcp_rid-90b608468dfef16e',q:'オリエンタルホテル福岡 博多ステーション'},
+   {id:'mars',jp:'マースガーデンホテル博多',en:'Mars Garden Hotel Hakata',score:'8.6',price:668,unit:'每間每晚（約）',bath:'一般浴室',knee:0,pros:['最平','博多駅筑紫口一帶'],cancel:'',url:'https://www.booking.com/hotel/jp/sunroute-hakata.html?aid=8132308&checkin=2027-01-18&checkout=2027-01-19&no_rooms=2&group_adults=4&selected_currency=HKD&label=mcp_rid-90b608468dfef16e',q:'マースガーデンホテル博多'}]},
+ {id:'n2',label:'第 2 晚',dates:'1月19日（二）',area:'由布院',color:'var(--d2)',
+  note:'價錢係每間房 2 人、一泊二食、含稅。大部分可以免費取消到入住前約 1 星期。如果揀「いちろく版本」，由布院改住 1 月 20 日，要重新查價。',
+  cands:[
+   {id:'kirara',jp:'由布岳一望の宿 きらら',en:'Yufudake Ichibo no Yado Kirara',score:'9.0',price:3087,unit:'每間（Deluxe 離れ 61㎡）',bath:'房內半露天溫泉',knee:0,kneeNote:'離れ全部喺地面層。Superior 房（HK$2,755）要行樓梯。',pros:['望到由布岳','有床（twin）＋榻榻米','只收大人（冇小朋友，靜）'],cancel:'2027-01-11 前免費取消',url:'https://www.booking.com/hotel/jp/ryokan-kirara.html?aid=8132308&checkin=2027-01-19&checkout=2027-01-20&no_rooms=2&group_adults=4&selected_currency=HKD&label=mcp_rid-600611f8ec4d005d',q:'由布岳一望の宿 きらら'},
+   {id:'yasuha',jp:'ゆふいん泰葉',en:'Yufuin Yasuha',score:'8.3',price:3718,unit:'每間（Superior 離れ）',bath:'房內露天溫泉',knee:null,kneeNote:'山坡上，要問離れ有冇樓梯。',pros:['免費接送','望到由布岳'],cancel:'2027-01-15 前免費取消',url:'https://www.booking.com/hotel/jp/yufuin-yasuha.html?aid=8132308&checkin=2027-01-19&checkout=2027-01-20&no_rooms=2&group_adults=4&selected_currency=HKD&label=mcp_rid-4d5cc0af99bb20cf',q:'ゆふいん泰葉'},
+   {id:'kazenomori',jp:'由布院 風の森',en:'Yufuin Kaze no Mori',score:'9.0',price:null,unit:'2 人價未有',bath:'房內露天溫泉',knee:null,kneeNote:'要問。',pros:['全部房有露天風呂','和洋室，有床'],cancel:'2027-01-11 前免費取消',extra:'Booking.com 只顯示 3 人房價（約 HK$5,401），2 人價要去官網查。',url:'https://www.booking.com/hotel/jp/yufuin-kaze-no-mori.html?aid=8132308&checkin=2027-01-19&checkout=2027-01-20&no_rooms=2&group_adults=4&selected_currency=HKD&label=mcp_rid-0b65beca2307070d',q:'由布院 風の森'}]},
+ {id:'n3',label:'第 3 晚',dates:'1月20日（三）',area:'別府',color:'var(--d3)',
+  note:'價錢係每間房 2 人、一泊二食、含稅。如果揀「いちろく版本」，別府改住 1 月 21 日，要重新查價。',
+  cands:[
+   {id:'matsubaya',jp:'料亭 松葉屋',en:'Ryotei Matsubaya',score:'9.4',price:3522,unit:'每間（別館 60㎡）',bath:'房內露天溫泉',knee:0,kneeNote:'別館有升降機。',pros:['評分最高','觀海寺山上，望到別府灣','料亭，食物出名'],cancel:'2027-01-16 前免費取消',extra:'離鐵輪地獄較遠，的士約 15 分鐘。',url:'https://www.booking.com/hotel/jp/matsubaya.html?aid=8132308&checkin=2027-01-20&checkout=2027-01-21&no_rooms=2&group_adults=4&selected_currency=HKD&label=mcp_rid-b88aa99b538d4525',q:'料亭 松葉屋 別府'},
+   {id:'showaen',jp:'別府 昭和園',en:'Beppu Showaen',score:'8.8',price:4274,unit:'每間（Superior 獨立屋）',bath:'房內露天溫泉',knee:null,kneeNote:'庭園有小路，要問。',pros:['五星，庭園內獨立和式屋','免費接送'],cancel:'2027-01-16 前免費取消',extra:'略超預算。Standard 屋（房內室內溫泉）每間約 HK$3,622。',url:'https://www.booking.com/hotel/jp/beppu-showaen.html?aid=8132308&checkin=2027-01-20&checkout=2027-01-21&no_rooms=2&group_adults=4&selected_currency=HKD&label=mcp_rid-add880b4e3110d59',q:'別府 昭和園'},
+   {id:'nagomitsuki',jp:'別府 なごみ月',en:'Beppu Nagomitsuki',score:'8.9',price:2500,unit:'每間（Superior 43㎡）',bath:'房內半露天溫泉',knee:1,kneeNote:'Booking 寫部分樓層只有樓梯，要求低層。',pros:['最平','全部房有溫泉','只收大人'],cancel:'2027-01-12 前免費取消',url:'https://www.booking.com/hotel/jp/ryokan-nagomitsuki.html?aid=8132308&checkin=2027-01-20&checkout=2027-01-21&no_rooms=2&group_adults=4&selected_currency=HKD&label=mcp_rid-f2d4a65a6d28388c',q:'別府 なごみ月'}]}
+];
+
+var TASKS=[
+ {id:'t1',title:'訂博多酒店（1月18日＋21日，2 間房）',due:'2026-11-30',note:'訂房時寫低：19–21 日寄存大行李。'},
+ {id:'t2',title:'訂由布院旅館（1月19日，2 間房內溫泉）',due:'2026-11-30',note:'媽媽間房要地面層或者有升降機。'},
+ {id:'t3',title:'訂別府旅館（1月20日）',due:'2026-11-30',note:''},
+ {id:'t4',title:'訂 すみ劇場 むさし坐（1月18日 18:30，4 位，1 樓）',due:'2026-12-15',note:'電話 092-791-4866，可以請酒店幫手打。'},
+ {id:'t5',title:'訂 えん 酵素浴（1月22日 11:30）',due:'2026-12-22',note:'問價錢、男女同房、長者適唔適合。'},
+ {id:'t6',title:'買 JR 北九州 3 日 Pass（1月19–21日）',due:'2026-12-15',note:'¥15,000／人，網上買。'},
+ {id:'t7',title:'劃位：ゆふいんの森 1 號（1月19日）',due:'2026-12-19',note:'12 月 19 日 10:00 開賣。'},
+ {id:'t8',title:'劃位：特急ゆふ 由布院→別府（1月20日）',due:'2026-12-20',note:'12 月 20 日 10:00 開賣。如果大家揀巴士，呢項取消。'},
+ {id:'t9',title:'劃位：ソニック 別府→小倉（1月21日）',due:'2026-12-21',note:'12 月 21 日 10:00 開賣。'},
+ {id:'t10',title:'預約由布院旅館接送',due:'2027-01-10',note:'由布院駅 → 旅館，同埋退房去駅。'},
+ {id:'t11',title:'旅遊保險（4 人）',due:'2026-12-31',note:'睇清楚包唔包長者舊患。'},
+ {id:'t12',title:'媽媽用品：護膝、行山杖、暖包、常用藥',due:'2027-01-12',note:''},
+ {id:'t13',title:'Visit Japan Web 入境登記（4 人）',due:'2027-01-15',note:''},
+ {id:'t14',title:'日圓現金＋IC 卡（SUGOCA／Suica）＋eSIM',due:'2027-01-15',note:''},
+ {id:'t15',title:'確認太宰府巴士班次同車費',due:'2027-01-10',note:''},
+ {id:'t16',title:'決定路線：而家嘅版本定いちろく版本',due:'2026-11-28',note:'要喺訂酒店之前決定，因為由布院同別府嘅日期唔同。睇「投票」第一題。'}
+];
+var NOTE_KEYS=['d1','d2','d3','d4','d5','general'];
+var TABS=[['overview','總覽'],['days','每日行程'],['map','地圖'],['hotels','酒店'],['votes','投票'],['tasks','分工表'],['info','資料']];
+var MODE_LABEL={'飛機':'FLY','巴士':'BUS','JR':'JR','西鐵':'西鐵','地鐵':'地鐵','的士':'TAXI','步行':'WALK','食':'食','溫泉':'溫泉'};
+var STATUS=[['todo','未開始'],['doing','進行中'],['done','已完成']];
+var TRIP_START=new Date(2027,0,18);
+
+/* ---------- state ---------- */
+function clone(o){return JSON.parse(JSON.stringify(o));}
+var DEFAULT_SHARED={v:1,updated:'',decisions:{},hotelPick:{},hotelBooked:{},tasks:{},family:{}};
+var shared;
+try{shared=JSON.parse(document.getElementById('trip-state').textContent);}catch(e){shared=clone(DEFAULT_SHARED);}
+['decisions','hotelPick','hotelBooked','tasks','family'].forEach(function(k){if(!shared[k]||typeof shared[k]!=='object')shared[k]={};});
+
+var store={
+  get:function(k,d){try{var v=localStorage.getItem('kq27:'+k);return v==null?d:JSON.parse(v);}catch(e){return d;}},
+  set:function(k,v){try{localStorage.setItem('kq27:'+k,JSON.stringify(v));}catch(e){}}
+};
+var me=store.get('me',null); if(me&&!isVoter(me))me=null;
+var picks=store.get('picks',{})||{};
+var notes=store.get('notes',{})||{};
+var claims=store.get('claims',[])||[];
+var dayView=store.get('day','d1');
+var mapDay=store.get('mapday','d1');
+var tab=(location.hash||'').slice(1); if(!TABS.some(function(t){return t[0]===tab;}))tab='overview';
+
+var artifactNs=null, canWrite=false, editMode=false, draft=null, toastMsg='', toastTimer=null, importMsg='';
+function S(){return editMode&&draft?draft:shared;}
+function isDirty(){return editMode&&draft&&JSON.stringify(draft)!==JSON.stringify(shared);}
+
+/* ---------- helpers ---------- */
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+function gmap(q){return 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(q);}
+function todayStr(){var d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
+function daysUntil(iso){var p=iso.split('-');var t=new Date(+p[0],+p[1]-1,+p[2]);var n=new Date();n=new Date(n.getFullYear(),n.getMonth(),n.getDate());return Math.round((t-n)/86400000);}
+function dayById(id){for(var i=0;i<DAYS.length;i++)if(DAYS[i].id===id)return DAYS[i];return DAYS[0];}
+function hk(n){return 'HK$'+Number(n).toLocaleString('en-US');}
+function kneePill(k){
+  if(k===0)return '<span class="pill ok">平路／有升降機</span>';
+  if(k===1)return '<span class="pill warn">少量樓梯／斜路</span>';
+  if(k===2)return '<span class="pill bad">多樓梯</span>';
+  return '<span class="pill">膝頭：要問</span>';
+}
+function tagPill(t){
+  if(t==='願望清單')return '<span class="pill wish">★ 願望清單</span>';
+  if(t==='特色列車'||t==='火車迷')return '<span class="pill train">'+esc(t)+'</span>';
+  if(t==='私人溫泉')return '<span class="pill onsen">私人溫泉</span>';
+  if(t==='要訂位')return '<span class="pill info">要訂位</span>';
+  return '<span class="pill">'+esc(t)+'</span>';
+}
+function votersOf(key,optId){
+  var f=S().family;return VOTERS.filter(function(p){return f[p.id]&&f[p.id].k&&f[p.id].k[key]===optId;});
+}
+function dayPill(id){
+  if(id==='all')return '<span class="pill day" style="--dc:var(--ink)">全程</span>';
+  var d=dayById(id);return '<span class="pill day" style="--dc:'+d.color+'">DAY '+d.n+'</span>';
+}
+function voterChips(list){return list.length?'<div class="voters">'+list.map(function(p){return '<span class="voter">'+esc(p.name)+'</span>';}).join('')+'</div>':'';}
+
+/* ---------- masthead + tabs ---------- */
+function masthead(){
+  var d=daysUntil('2027-01-18');
+  var cd=d>0?'<div class="cd-num">'+d+'<span>日</span></div><div class="small muted">出發倒數</div>':(d>=-4?'<div class="cd-num">第 '+(1-d)+'<span>日</span></div><div class="small muted">旅程進行中</div>':'<div class="cd-num">✓</div><div class="small muted">旅程完成</div>');
+  var stops=[['福岡','var(--d1)'],['由布院','var(--d2)'],['別府','var(--d3)'],['門司港','var(--d4)'],['福岡','var(--d5)']];
+  return '<header class="mast wrap"><div class="mast-grid"><div>'+
+    '<div class="eyebrow">2027年1月18日 — 22日 · 5日4夜 · 4人</div>'+
+    '<h1>北九州家庭遊</h1>'+
+    '<div class="route">'+stops.map(function(s,i){return (i?'<span class="arr">→</span>':'')+'<span class="stn" style="--dc:'+s[1]+'"><span class="dot"></span>'+s[0]+'</span>';}).join('')+'</div>'+
+    '</div><div class="cd">'+cd+'</div></div>'+
+    '<div class="flights">'+
+      ticket('去程 · 1月18日（一）','07:50','香港','11:55','福岡')+
+      ticket('回程 · 1月22日（五）','20:55','福岡','23:55','香港')+
+    '</div></header>';
+}
+function ticket(lbl,t1,a1,t2,a2){return '<div class="ticket"><span class="lbl">'+lbl+'</span><span class="t">'+t1+'<span class="ap">'+a1+'</span></span><span class="line"></span><span class="t">'+t2+'<span class="ap">'+a2+'</span></span></div>';}
+function tabsBar(){
+  var who=me?'我係：<b>'+esc(PNAME[me])+'</b>':'未揀身份';
+  var edit=canWrite?'<button class="btn small '+(editMode?'primary':'')+'" data-act="edit" aria-pressed="'+editMode+'">'+(editMode?'編輯中':'編輯模式')+'</button>':'';
+  return '<nav class="tabs"><div class="wrap tabs-inner"><div class="tablist" role="tablist">'+
+    TABS.map(function(t){return '<button class="tab" role="tab" data-act="tab" data-v="'+t[0]+'" aria-selected="'+(tab===t[0])+'">'+t[1]+'</button>';}).join('')+
+    '</div><span class="who-chip">'+who+'</span>'+edit+'</div></nav>';
+}
+
+/* ---------- overview ---------- */
+function vOverview(){
+  var s=S();
+  var open=VOTES.filter(function(v){return !s.decisions[v.id];});
+  var openHotels=HOTEL_NIGHTS.filter(function(n){return !s.hotelPick[n.id];});
+  var pending=TASKS.filter(function(t){var st=s.tasks[t.id];return !st||st.status!=='done';}).sort(function(a,b){return a.due<b.due?-1:1;}).slice(0,5);
+  var doneCount=TASKS.length-TASKS.filter(function(t){var st=s.tasks[t.id];return !st||st.status!=='done';}).length;
+  var h='<section class="card stack"><div class="section-head"><h2>五日一覽</h2><span class="small muted">撳一日睇詳細</span></div><div class="daystrip">'+
+    DAYS.map(function(d){return '<button class="dcard" style="--dc:'+d.color+'" data-act="goday" data-v="'+d.id+'"><span class="dn">DAY '+d.n+' · '+d.date+'</span><span class="dt">'+esc(d.title)+'</span><span class="dnight">住：'+esc(d.night)+'</span></button>';}).join('')+
+    '</div></section>';
+  h+='<section class="card"><div class="stats">'+
+    stat('2','間房，每晚每間預算 ≤ HK$4,000')+stat('2','款特色列車：ゆふいんの森（第一代）、ソニック')+stat('2','個願望清單：むさし坐、えん酵素浴')+stat(doneCount+'/'+TASKS.length,'項準備工作已完成')+
+    '</div></section>';
+  h+='<div class="grid2">';
+  h+='<section class="card stack"><div class="section-head"><h3>未決定</h3><button class="btn small" data-act="tab" data-v="votes">去投票</button></div><ul class="list">'+
+    open.map(function(v){return '<li><span>'+esc(v.q)+'</span>'+dayPill(v.day)+'</li>';}).join('')+
+    openHotels.map(function(n){return '<li><span>揀酒店：'+esc(n.area)+'（'+esc(n.label)+'）</span><span class="pill">酒店</span></li>';}).join('')+
+    (open.length+openHotels.length===0?'<li><span class="muted">全部已決定。</span><span></span></li>':'')+
+    '</ul></section>';
+  h+='<section class="card stack"><div class="section-head"><h3>下一個限期</h3><button class="btn small" data-act="tab" data-v="tasks">分工表</button></div><ul class="list">'+
+    pending.map(function(t){var st=s.tasks[t.id]||{};var dl=daysUntil(t.due);var cls=dl<0?'bad':(dl<=7?'warn':'');return '<li><span>'+esc(t.title)+'<br><span class="small muted">'+esc(PNAME[st.owner]||'未分配')+'</span></span><span class="pill '+cls+' mono">'+t.due.slice(5)+(dl<0?' 過期':' · '+dl+'日')+'</span></li>';}).join('')+
+    '</ul></section>';
+  h+='</div>';
+  h+='<section class="card stack prose"><h3>點樣用呢個頁面</h3><ul>'+
+    '<li>喺「投票」同「酒店」揀你鍾意嘅選擇，再喺「每日行程」寫意見。</li>'+
+    '<li>你嘅選擇只會留喺你部機。揀完之後，按「投票」分頁嘅「複製我的意見」，WhatsApp 傳俾 Clinton。</li>'+
+    '<li>Clinton 會將大家嘅意見匯入，再更新共享版本，大家重新開頁面就睇到。</li>'+
+    '<li>標住「要再確認」嘅資料係 2026 年 11 月 22 日查到，出發前要再睇一次。</li></ul>'+
+    '<p class="small muted">共享版本最後更新：'+esc(s.updated||'—')+'</p></section>';
+  return h;
+}
+function stat(v,k){return '<div class="stat"><div class="v">'+v+'</div><div class="k">'+k+'</div></div>';}
+
+/* ---------- days ---------- */
+function vDays(){
+  var d=dayById(dayView);
+  var h='<div class="chips">'+DAYS.map(function(x){return '<button class="chip" style="--dc:'+x.color+'" data-act="day" data-v="'+x.id+'" aria-pressed="'+(x.id===d.id)+'">Day '+x.n+' · '+x.date.replace(/（.）/,'')+'</button>';}).join('')+'</div>';
+  h+='<section class="card stack" style="--dc:'+d.color+'"><div class="dayhead" style="padding-top:12px"><span class="eyebrow">DAY '+d.n+' · '+d.date+'</span><h2>'+esc(d.title)+'</h2><div class="meta"><span>住：'+esc(d.night)+'</span><span>'+d.items.length+' 個站</span></div></div>';
+  h+='<ol class="tl">'+d.items.map(function(it){
+    var v=it.vote?VOTES.filter(function(x){return x.id===it.vote;})[0]:null;
+    var dec=v&&S().decisions[v.id]?v.opts.filter(function(o){return o.id===S().decisions[v.id];})[0]:null;
+    var place=it.p?PLACES[it.p]:null;
+    return '<li class="tl-item"><div class="tl-time">'+it.t+'</div><div class="tl-rail"></div><div class="tl-body">'+
+      '<div class="tl-title"><span>'+esc(it.title)+'</span>'+(it.tags||[]).map(tagPill).join('')+'</div>'+
+      (it.desc?'<div class="tl-desc">'+esc(it.desc)+'</div>':'')+
+      '<div class="tl-tags"><span class="pill mode">'+esc(MODE_LABEL[it.mode]||it.mode)+'</span>'+kneePill(it.knee)+
+        (v?(dec?'<span class="pill ok">已決定：'+esc(dec.title)+'</span>':'<button class="btn small" data-act="tab" data-v="votes">投票：'+esc(v.short)+'</button>'):'')+
+        (place?'<a class="btn small ghost" href="'+gmap(place.q)+'" target="_blank" rel="noopener">Google 地圖 ↗</a>':'')+
+      '</div>'+
+      (it.kneeNote?'<div class="knee muted"><span>膝頭：</span><span>'+esc(it.kneeNote)+'</span></div>':'')+
+      '</div></li>';
+  }).join('')+'</ol></section>';
+  h+=notesCard(d.id,'你對 Day '+d.n+' 有咩意見？',d.color);
+  return h;
+}
+function notesCard(key,label,color){
+  var fam=S().family, list=VOTERS.filter(function(p){return fam[p.id]&&fam[p.id].n&&fam[p.id].n[key];});
+  return '<section class="card stack" style="--dc:'+(color||'var(--line)')+'"><h3>'+esc(label)+'</h3>'+
+    '<textarea class="note-box" id="note-'+key+'" data-note="'+key+'" placeholder="例如：想早啲食晚飯／媽媽想去……">'+esc(notes[key]||'')+'</textarea>'+
+    '<p class="small muted" style="margin:0">只會留喺你部機，會包括喺「複製我的意見」入面。</p>'+
+    (list.length?'<div class="stack"><span class="small muted">家人留言（已匯入）</span>'+list.map(function(p){return '<div class="fam-note"><b>'+esc(p.name)+'：</b>'+esc(fam[p.id].n[key])+'</div>';}).join('')+'</div>':'')+
+    '</section>';
+}
+
+/* ---------- map ---------- */
+function loopSvg(){
+  function lineP(d,c,dash,w){return '<path d="'+d+'" style="fill:none;stroke:'+c+';stroke-width:'+(w||7)+'px;stroke-linecap:round;stroke-linejoin:round'+(dash?';stroke-dasharray:2 10':'')+'"/>';}
+  function stn(x,y){return '<circle cx="'+x+'" cy="'+y+'" r="6" class="node"/>';}
+  function stay(x,y){return '<circle cx="'+x+'" cy="'+y+'" r="12" class="node"/><circle cx="'+x+'" cy="'+y+'" r="5" class="node-in"/>';}
+  function lbl(x,y,t,a,cls){return '<text x="'+x+'" y="'+y+'" text-anchor="'+(a||'middle')+'" class="'+(cls||'st')+'">'+t+'</text>';}
+  function seg(x,y,t,c,a){return '<text x="'+x+'" y="'+y+'" text-anchor="'+(a||'middle')+'" class="seg" style="fill:'+c+'">'+t+'</text>';}
+  var s='<svg class="loopmap" viewBox="0 0 760 420" role="img" aria-label="路線圖：福岡、由布院、別府、門司港，順時針一圈">';
+  s+='<rect x="0" y="0" width="760" height="420" class="mapbg"/>';
+  s+=lbl(60,60,'玄 界 灘','middle','sea')+lbl(600,36,'周 防 灘','middle','sea')+lbl(735,300,'別府灣','middle','sea')+lbl(70,400,'有 明 海','middle','sea');
+  s+=lineP('M150 210 V345 H540','var(--d2)');
+  s+=lineP('M540 345 H690 V255','var(--d3)');
+  s+=lineP('M690 255 V90 H420','var(--d4)');
+  s+=lineP('M420 90 L470 42','var(--d4)',false,5);
+  s+=lineP('M420 90 H150 V210','var(--d4)');
+  s+=lineP('M77.4 287.7 L147.4 207.7','var(--d1)',true,5);
+  s+=lineP('M82.6 292.3 L152.6 212.3','var(--d5)',true,5);
+  s+=lineP('M150 210 L230 280','var(--d1)',true,5);
+  s+=stn(150,300)+stn(360,345)+stn(690,345)+stn(690,170)+stn(420,90)+stn(470,42)+stn(230,280);
+  s+='<rect x="72" y="282" width="16" height="16" rx="3" class="node"/>';
+  s+=stay(150,210)+stay(540,345)+stay(690,255);
+  s+=lbl(130,206,'博多','end')+lbl(130,222,'住第1、4晚','end','stsub');
+  s+=lbl(80,320,'福岡機場')+lbl(244,285,'太宰府','start')+lbl(136,304,'久留米','end')+lbl(360,372,'日田');
+  s+=lbl(540,376,'由布院')+lbl(540,392,'住第2晚','middle','stsub')+lbl(704,350,'大分','start');
+  s+=lbl(708,252,'別府','start')+lbl(708,268,'住第3晚','start','stsub')+lbl(704,174,'中津','start');
+  s+=lbl(420,116,'小倉')+lbl(482,40,'門司港','start');
+  s+=seg(254,333,'第2日・ゆふいんの森 1號・2時14分','var(--d2)');
+  s+=seg(615,322,'第3日・特急ゆふ','var(--d3)')+seg(615,336,'約 1 小時','var(--d3)');
+  s+=seg(555,78,'第4日・ソニック 別府→小倉・約1時15分','var(--d4)');
+  s+=seg(285,78,'第4日・ソニック 小倉→博多・約45分','var(--d4)');
+  s+=seg(432,58,'JR 13分','var(--d4)','end');
+  s+=seg(100,262,'巴士 約25分','var(--d1)','end');
+  s+=seg(196,236,'巴士 約45分','var(--d1)','start');
+  s+='</svg>';
+  return s;
+}
+function pinMap(area,color){
+  var pts=area.pts.map(function(k){return PLACES[k];});
+  var W=420,H=280,P=36;
+  var lat0=pts.reduce(function(a,p){return a+p.lat;},0)/pts.length, k=Math.cos(lat0*Math.PI/180);
+  var xs=pts.map(function(p){return p.lon*k;}), ys=pts.map(function(p){return -p.lat;});
+  var minx=Math.min.apply(null,xs),maxx=Math.max.apply(null,xs),miny=Math.min.apply(null,ys),maxy=Math.max.apply(null,ys);
+  var sx=Math.max(maxx-minx,0.006), sy=Math.max(maxy-miny,0.006);
+  var sc=Math.min((W-2*P)/sx,(H-2*P)/sy), cx=(minx+maxx)/2, cy=(miny+maxy)/2;
+  var placed=[];
+  var XY=pts.map(function(p,i){
+    var x=(xs[i]-cx)*sc+W/2, y=(ys[i]-cy)*sc+H/2, tries=0;
+    while(tries<6&&placed.some(function(q){return Math.hypot(q[0]-x,q[1]-y)<24;})){x+=17;y-=13;tries++;}
+    placed.push([x,y]);return [x,y];
+  });
+  var kmPerPx=111.32/sc, nice=[0.2,0.5,1,2,5,10,20,50], len=nice[0];
+  for(var i=0;i<nice.length;i++){if(nice[i]/kmPerPx<=120)len=nice[i];}
+  var barPx=len/kmPerPx;
+  var s='<svg class="pinmap" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="'+esc(area.name)+' 地圖">';
+  s+='<rect width="'+W+'" height="'+H+'" class="mapbg"/>';
+  for(var gx=0;gx<=W;gx+=42)s+='<line x1="'+gx+'" y1="0" x2="'+gx+'" y2="'+H+'" class="grid"/>';
+  for(var gy=0;gy<=H;gy+=42)s+='<line x1="0" y1="'+gy+'" x2="'+W+'" y2="'+gy+'" class="grid"/>';
+  s+='<polyline points="'+XY.map(function(p){return p[0].toFixed(1)+','+p[1].toFixed(1);}).join(' ')+'" style="fill:none;stroke:'+color+';stroke-width:2.5px;stroke-dasharray:5 6;stroke-linecap:round"/>';
+  XY.forEach(function(p,i){s+='<circle cx="'+p[0].toFixed(1)+'" cy="'+p[1].toFixed(1)+'" r="11" class="pin" style="fill:'+color+'"/><text x="'+p[0].toFixed(1)+'" y="'+(p[1]+4).toFixed(1)+'" text-anchor="middle" class="pinnum">'+(i+1)+'</text>';});
+  s+='<g transform="translate(16,'+(H-16)+')"><line x1="0" y1="0" x2="'+barPx.toFixed(1)+'" y2="0" class="bar"/><line x1="0" y1="-4" x2="0" y2="4" class="bar"/><line x1="'+barPx.toFixed(1)+'" y1="-4" x2="'+barPx.toFixed(1)+'" y2="4" class="bar"/><text x="'+(barPx/2).toFixed(1)+'" y="-7" text-anchor="middle" class="maptxt">'+len+' 公里</text></g>';
+  s+='<g transform="translate('+(W-22)+',24)"><path d="M0 -12 L6 6 L0 2 L-6 6 Z" class="north"/><text x="0" y="20" text-anchor="middle" class="maptxt">N</text></g>';
+  s+='</svg>';
+  return s;
+}
+function vMap(){
+  var d=dayById(mapDay);
+  var h='<section class="card stack"><div class="section-head"><h2>路線圖</h2><span class="small muted">順時針一圈：博多 → 由布院 → 別府 → 小倉／門司港 → 博多</span></div>'+
+    '<div class="mapbox">'+loopSvg()+'</div>'+
+    '<div class="legend">'+DAYS.map(function(x){return '<span style="--dc:'+x.color+'"><i></i>Day '+x.n+'</span>';}).join('')+'<span>◎ 住宿</span><span>虛線 = 巴士</span></div></section>';
+  h+='<section class="card stack"><div class="section-head"><h2>每日地圖</h2><span class="small muted">位置按真實經緯度畫；撳名打開 Google 地圖</span></div>';
+  h+='<div class="chips">'+DAYS.map(function(x){return '<button class="chip" style="--dc:'+x.color+'" data-act="mapday" data-v="'+x.id+'" aria-pressed="'+(x.id===d.id)+'">Day '+x.n+'</button>';}).join('')+'</div>';
+  h+='<div class="grid2">'+d.areas.map(function(a){
+    return '<div class="stack" style="--dc:'+d.color+'"><h3>'+esc(a.name)+'</h3><div class="mapbox">'+pinMap(a,d.color)+'</div><ol class="maplist">'+
+      a.pts.map(function(k,i){var p=PLACES[k];return '<li><span class="num">'+(i+1)+'</span><span>'+esc(p.n)+'</span><a href="'+gmap(p.q)+'" target="_blank" rel="noopener" class="small">地圖 ↗</a></li>';}).join('')+
+      '</ol></div>';
+  }).join('')+'</div></section>';
+  return h;
+}
+
+/* ---------- hotels ---------- */
+function whoBanner(){
+  return '<section class="card stack"><div class="who-pick"><b>我係：</b>'+VOTERS.map(function(p){return '<button class="chip" data-act="who" data-v="'+p.id+'" aria-pressed="'+(me===p.id)+'">'+esc(p.name)+'</button>';}).join('')+'</div>'+
+    (me?'':'<p class="small muted" style="margin:0">先揀你係邊個，複製意見時先知係邊個嘅。</p>')+'</section>';
+}
+function vHotels(){
+  var s=S();
+  var h=whoBanner();
+  h+='<p class="small muted" style="margin:0">預算：每間房每晚最多 HK$4,000。價錢係 2026 年 11 月 22 日喺 Booking.com 查到，會變。全部係 2 間房：Clinton＋Charlotte 一間，Lorraine＋媽媽一間。</p>';
+  HOTEL_NIGHTS.forEach(function(n){
+    var key='hotel-'+n.id, chosen=s.hotelPick[n.id], booked=!!s.hotelBooked[n.id];
+    h+='<section class="card stack" style="--dc:'+n.color+';border-top:6px solid var(--dc)"><div class="section-head"><div><span class="eyebrow">'+esc(n.label)+' · '+esc(n.dates)+'</span><h2>'+esc(n.area)+'</h2></div><div class="row">'+
+      (chosen?'<span class="stamp">已揀</span>':'')+(booked?'<span class="pill ok">已訂</span>':'<span class="pill">未訂</span>')+
+      (editMode?'<button class="btn small" data-act="hbooked" data-night="'+n.id+'">'+(booked?'改為未訂':'標記已訂')+'</button>':'')+
+      '</div></div><p class="small muted" style="margin:0">'+esc(n.note)+'</p><div class="hcands">'+
+      n.cands.map(function(c){
+        var mine=picks[key]===c.id, vs=votersOf(key,c.id), isChosen=chosen===c.id;
+        return '<div class="hc'+(isChosen?' chosen':'')+'"><div><div class="hn">'+esc(c.jp)+'</div><div class="he">'+esc(c.en)+'</div></div>'+
+          '<div class="row"><span class="pill mono">Booking '+esc(c.score)+'</span><span class="pill onsen">'+esc(c.bath)+'</span>'+kneePill(c.knee)+'</div>'+
+          '<div class="price">'+(c.price?hk(c.price):'—')+' <small>'+esc(c.unit)+'</small></div>'+
+          '<ul>'+c.pros.map(function(p){return '<li>'+esc(p)+'</li>';}).join('')+(c.kneeNote?'<li>膝頭：'+esc(c.kneeNote)+'</li>':'')+(c.extra?'<li>'+esc(c.extra)+'</li>':'')+(c.cancel?'<li>'+esc(c.cancel)+'</li>':'')+'</ul>'+
+          '<div class="row"><a class="btn small ghost" href="'+esc(c.url)+'" target="_blank" rel="noopener">Booking.com ↗</a><a class="btn small ghost" href="'+gmap(c.q)+'" target="_blank" rel="noopener">地圖 ↗</a></div>'+
+          '<div class="row"><button class="btn small '+(mine?'primary':'')+'" data-act="pick" data-vote="'+key+'" data-v="'+c.id+'" aria-pressed="'+mine+'">'+(mine?'✓ 我鍾意':'我鍾意呢間')+'</button>'+
+          (editMode?'<button class="btn small" data-act="hchoose" data-night="'+n.id+'" data-v="'+c.id+'">'+(isChosen?'取消揀定':'揀定呢間')+'</button>':'')+'</div>'+
+          voterChips(vs)+'</div>';
+      }).join('')+'</div></section>';
+  });
+  return h;
+}
+
+/* ---------- votes ---------- */
+function vVotes(){
+  var s=S();
+  var h=whoBanner();
+  h+=VOTES.map(function(v){
+    var dc=v.day==='all'?'var(--ink)':dayById(v.day).color, dec=s.decisions[v.id];
+    return '<section class="card vote" style="--dc:'+dc+'"><div class="section-head"><div class="row">'+dayPill(v.day)+'<h3>'+esc(v.q)+'</h3></div>'+(dec?'<span class="stamp">已決定</span>':'')+'</div><div class="opts">'+
+      v.opts.map(function(o){
+        var mine=picks[v.id]===o.id, vs=votersOf(v.id,o.id), isDec=dec===o.id;
+        return '<div class="stack"><button class="opt'+(isDec?' decided':'')+'" data-act="pick" data-vote="'+v.id+'" data-v="'+o.id+'" aria-pressed="'+mine+'"><span class="ot">'+esc(o.title)+'</span><span class="od">'+esc(o.desc)+'</span>'+(mine?'<span class="mine">✓ 你揀咗</span>':'')+(isDec?'<span class="stamp">已決定</span>':'')+voterChips(vs)+'</button>'+
+          (editMode?'<button class="btn small" data-act="decide" data-vote="'+v.id+'" data-v="'+o.id+'">'+(isDec?'取消決定':'設為決定')+'</button>':'')+'</div>';
+      }).join('')+'</div></section>';
+  }).join('');
+  h+=notesCard('general','其他意見（任何嘢都得）');
+  var summary=buildSummary();
+  h+='<section class="card stack"><div class="section-head"><h3>傳俾 Clinton</h3><button class="btn primary" data-act="copy"'+(me?'':' disabled')+'>複製我的意見</button></div>'+
+    '<p class="small muted" style="margin:0">'+(me?'複製之後貼去 WhatsApp。最尾嗰行「意見碼」唔好改。':'先喺上面揀你係邊個。')+'</p>'+
+    '<textarea class="preview" id="summary-preview" readonly aria-label="意見預覽">'+esc(summary)+'</textarea></section>';
+  if(editMode){
+    h+='<section class="card stack"><h3>匯入家人意見（Clinton）</h3><p class="small muted" style="margin:0">將家人 WhatsApp 傳嚟嘅成段文字貼入嚟，按「匯入」，再按底部「儲存到共享版本」。</p>'+
+      '<textarea class="note-box" id="import-box" placeholder="貼上包括 KQ27: 嘅文字"></textarea><div class="row"><button class="btn" data-act="import">匯入</button>'+
+      (me?'<button class="btn" data-act="syncme">將我（'+esc(PNAME[me])+'）嘅選擇加入共享版本</button>':'')+'</div>'+
+      (importMsg?'<p class="small" style="margin:0">'+esc(importMsg)+'</p>':'')+
+      '<div class="small muted">已匯入：'+(VOTERS.filter(function(p){return s.family[p.id];}).map(function(p){return esc(p.name)+'（'+esc(s.family[p.id].t||'')+'）';}).join('、')||'未有')+'</div></section>';
+  }
+  return h;
+}
+function b64enc(str){var bytes=new TextEncoder().encode(str),bin='';for(var i=0;i<bytes.length;i++)bin+=String.fromCharCode(bytes[i]);return btoa(bin);}
+function b64dec(s){var bin=atob(s),bytes=new Uint8Array(bin.length);for(var i=0;i<bin.length;i++)bytes[i]=bin.charCodeAt(i);return new TextDecoder().decode(bytes);}
+function validKeys(src){
+  var k={};src=src||{};
+  VOTES.forEach(function(v){if(v.opts.some(function(o){return o.id===src[v.id];}))k[v.id]=src[v.id];});
+  HOTEL_NIGHTS.forEach(function(n){var key='hotel-'+n.id;if(n.cands.some(function(c){return c.id===src[key];}))k[key]=src[key];});
+  return k;
+}
+function cleanNotes(src){var n={};src=src||{};NOTE_KEYS.forEach(function(key){if(typeof src[key]==='string'&&src[key].trim())n[key]=src[key].trim().slice(0,600);});return n;}
+function buildSummary(){
+  var L=['【北九州家庭遊・我嘅意見】','由：'+(me?PNAME[me]:'（未揀身份）')+'　'+todayStr(),'','— 投票 —'];
+  VOTES.forEach(function(v){var o=v.opts.filter(function(o){return o.id===picks[v.id];})[0];L.push('・'+v.short+'：'+(o?o.title:'未揀'));});
+  L.push('','— 酒店 —');
+  HOTEL_NIGHTS.forEach(function(n){var c=n.cands.filter(function(c){return c.id===picks['hotel-'+n.id];})[0];L.push('・'+n.area+'：'+(c?c.jp:'未揀'));});
+  var cl=claims.filter(function(id){return TASKS.some(function(t){return t.id===id;});});
+  if(cl.length){L.push('','— 我可以負責 —');cl.forEach(function(id){var t=TASKS.filter(function(t){return t.id===id;})[0];L.push('・'+t.title);});}
+  var nn=cleanNotes(notes), nk=Object.keys(nn);
+  if(nk.length){L.push('','— 留言 —');nk.forEach(function(key){L.push('・'+(key==='general'?'其他':'Day '+key.slice(1))+'：'+nn[key]);});}
+  var code='KQ27:'+b64enc(JSON.stringify({v:1,p:me,t:todayStr(),k:validKeys(picks),c:cl,n:nn}));
+  L.push('','意見碼（Clinton 貼入網頁「匯入家人意見」）：',code);
+  return L.join('\n');
+}
+function importCode(text){
+  var m=String(text||'').match(/KQ27:([A-Za-z0-9+\/=\s]+)/);
+  if(!m)return '搵唔到意見碼（KQ27:…）。請貼上成段文字。';
+  var obj;try{obj=JSON.parse(b64dec(m[1].replace(/\s+/g,'')));}catch(e){return '意見碼唔完整，請叫佢再複製一次。';}
+  if(!obj||!isVoter(obj.p))return '意見碼入面冇身份，請叫佢先揀「我係」再複製。';
+  draft.family[obj.p]={k:validKeys(obj.k),c:(Array.isArray(obj.c)?obj.c:[]).filter(function(id){return TASKS.some(function(t){return t.id===id;});}),n:cleanNotes(obj.n),t:String(obj.t||'').slice(0,10)};
+  return '已匯入 '+PNAME[obj.p]+' 嘅意見。記得按底部「儲存到共享版本」。';
+}
+
+/* ---------- tasks ---------- */
+function vTasks(){
+  var s=S();
+  var sorted=TASKS.slice().sort(function(a,b){return a.due<b.due?-1:(a.due>b.due?1:0);});
+  var h='<section class="card stack"><div class="section-head"><h2>分工表</h2><span class="small muted">建議分工，可以改。想負責邊項，撳「我可以負責」。</span></div><div>';
+  h+=sorted.map(function(t){
+    var st=s.tasks[t.id]||{owner:'',status:'todo',note:''};
+    var dl=daysUntil(t.due), dcls=st.status==='done'?'ok':(dl<0?'bad':(dl<=7?'warn':''));
+    var statusLabel=(STATUS.filter(function(x){return x[0]===st.status;})[0]||STATUS[0])[1];
+    var claimed=claims.indexOf(t.id)>=0;
+    var vol=VOTERS.filter(function(p){var f=s.family[p.id];return f&&f.c&&f.c.indexOf(t.id)>=0;});
+    var side;
+    if(editMode){
+      side='<select data-tfield="owner" data-task="'+t.id+'" aria-label="負責人"><option value="">未分配</option>'+PEOPLE.map(function(p){return '<option value="'+p.id+'"'+(st.owner===p.id?' selected':'')+'>'+esc(p.name)+'</option>';}).join('')+'</select>'+
+        '<select data-tfield="status" data-task="'+t.id+'" aria-label="狀態">'+STATUS.map(function(x){return '<option value="'+x[0]+'"'+(st.status===x[0]?' selected':'')+'>'+x[1]+'</option>';}).join('')+'</select>';
+    }else{
+      side='<span class="pill">'+esc(PNAME[st.owner]||'未分配')+'</span><span class="pill '+(st.status==='done'?'ok':(st.status==='doing'?'info':''))+'">'+statusLabel+'</span>';
+    }
+    return '<div class="task'+(st.status==='done'?' done':'')+'"><div><div class="tt">'+esc(t.title)+'</div>'+
+      (t.note?'<div class="tn">'+esc(t.note)+'</div>':'')+
+      (editMode?'<input type="text" id="tnote-'+t.id+'" data-tfield="note" data-task="'+t.id+'" value="'+esc(st.note||'')+'" placeholder="備註（例如：已訂，確認號碼收埋喺 email）" style="margin-top:6px">':(st.note?'<div class="tn">備註：'+esc(st.note)+'</div>':''))+
+      '<div class="row" style="margin-top:6px"><button class="btn small '+(claimed?'primary':'')+'" data-act="claim" data-v="'+t.id+'" aria-pressed="'+claimed+'">'+(claimed?'✓ 我可以負責':'我可以負責')+'</button>'+
+      (vol.length?'<span class="small muted">自薦：</span>'+voterChips(vol):'')+'</div></div>'+
+      '<div class="side"><span class="pill '+dcls+' mono">'+t.due+(st.status==='done'?'':(dl<0?' · 過期':' · 仲有 '+dl+' 日'))+'</span>'+side+'</div></div>';
+  }).join('');
+  h+='</div></section>';
+  return h;
+}
+
+/* ---------- info ---------- */
+function vInfo(){
+  var h='<div class="grid2">';
+  h+='<section class="card stack prose"><h3>天氣同衣著（1 月中）</h3><ul><li>福岡約 3–10°C，別府約 2–10°C。</li><li>由布院最凍，清晨可以低過 0°C，有機會落雪。</li><li>帶羽絨、頸巾、手套、暖包、潤膚膏。旅館有浴衣同拖鞋。</li></ul></section>';
+  h+='<section class="card stack prose"><h3>紋身同溫泉</h3><ul><li>大部分公眾大浴場唔准紋身。</li><li>今次全部揀房內溫泉，冇問題。</li><li>如果想去公眾浴池，先問旅館有冇遮紋身貼或者貸切風呂（私人包場）。</li><li>えん酵素浴係私人半個室，預約時順便問一句。</li></ul></section>';
+  h+='<section class="card stack prose"><h3>媽媽膝頭</h3><ul><li>行程盡量揀平路、升降機、扶手電梯；每個站都有膝頭標示。</li><li>旅館揀有床嘅房，唔使喺地上起身。</li><li>ゆふいんの森上車有幾級樓梯，有扶手，慢慢上。</li><li>溫泉出入池地面滑，扶住扶手。帶護膝同行山杖。</li></ul></section>';
+  h+='<section class="card stack prose"><h3>實用資料</h3><ul><li>日本比香港快 1 小時。</li><li>報警 110；救護車、火警 119。</li><li>入境處協助求助熱線（海外）：+852 1868。</li><li>IC 卡（SUGOCA／Suica）用得喺地鐵、巴士、便利店。</li><li>2026 年 11 月起日本改為「先付稅、離境退稅」，買嘢留收據，喺機場辦手續（細節要再確認）。</li></ul></section>';
+  h+='</div>';
+  h+=trainCal();
+  h+='<section class="card stack"><h3>JR 北九州 3 日 Pass 抵唔抵？</h3><div class="tablebox"><table class="t"><thead><tr><th>段</th><th>日期</th><th style="text-align:right">單程大約（每人）</th></tr></thead><tbody>'+
+    tr('博多 → 由布院（ゆふいんの森 指定席）','1/19','¥6,130')+tr('由布院 → 別府（特急ゆふ 指定席）','1/20','¥2,200')+tr('別府 → 小倉（ソニック 指定席）','1/21','¥4,600')+tr('小倉 ⇄ 門司港','1/21','¥560')+tr('小倉 → 博多（ソニック 自由席）','1/21','¥2,500')+
+    '<tr><th>合計</th><th></th><th style="text-align:right" class="mono">約 ¥16,000</th></tr><tr><th>北九州 3 日 Pass（2026 年 4 月價）</th><th>1/19–21</th><th style="text-align:right" class="mono">¥15,000</th></tr></tbody></table></div>'+
+    '<p class="small muted" style="margin:0">除咗第一行（JR 官網價），其他係估算。Pass 每人大約慳 ¥1,000，仲可以免費劃位。如果第 3 日搭巴士，JR 只需要約 ¥13,800，就唔好買 Pass。Pass 唔包山陽新幹線（小倉↔博多）。第 1 日同第 5 日用巴士同地鐵，用 IC 卡。</p></section>';
+  h+='<section class="card stack"><h3>預算估算（4 人）</h3><div class="tablebox"><table class="t"><thead><tr><th>項目</th><th style="text-align:right">大約</th></tr></thead><tbody>'+
+    tr2('博多酒店 2 晚 × 2 間（JR Blossom，1 月 18 日價）','HK$4,500')+tr2('由布院旅館 1 晚 × 2 間（一泊二食）','HK$5,500–7,900')+tr2('別府旅館 1 晚 × 2 間（一泊二食）','HK$5,000–8,600')+tr2('JR 北九州 3 日 Pass × 4','¥60,000')+tr2('其他交通（巴士、西鐵、的士）','約 ¥5,000／人')+tr2('景點門票（地獄、紀念館、庭園）','約 ¥3,500／人')+tr2('えん酵素浴','要問價')+
+    '</tbody></table></div><p class="small muted" style="margin:0">酒店價錢係 Booking.com 2026 年 11 月 22 日嘅價，會變。午餐、第 1、4、5 日晚餐同手信未計。</p></section>';
+  h+='<section class="card stack prose"><h3>要再確認</h3><ul>'+
+    ['列車月曆係 JR 九州 2026 年 10 月 22 日資料，訂位時再睇一次','太宰府巴士班次同車費','むさし坐 定休日、訂位方法、1 樓座位','えん 價錢、男女同房、長者適唔適合','九州鐵道紀念館入場費（¥300 定 ¥500）','地獄巡禮共通券價錢','博多酒店 1 月 21 日價錢','由布院 風の森 2 人價錢','日本新退稅制度細節'].map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+
+    '</ul></section>';
+  h+='<section class="card stack prose"><h3>參考</h3><ul>'+
+    link('JR 九州 ゆふいんの森','https://www.jrkyushu.co.jp/trains/yufuinnomori/')+link('JR 九州 Rail Pass','https://www.jrkyushu.co.jp/english/railpass/railpass.html')+link('えん發酵溫熱木浴 福岡店（官網）','https://en-mokuyoku.com/en-fukuoka/')+link('波比看世界：福岡景點','https://bobbytravel.tw/fukuoka-attractions/')+
+    '</ul></section>';
+  return h;
+}
+function trainCal(){
+  var D=['1/18（一）','1/19（二）','1/20（三）','1/21（四）','1/22（五）'];
+  var R=[
+    ['ゆふいんの森 1・2・5・6 號','博多⇄由布院',['第一代','第一代','第一代','第一代','✓']],
+    ['ゆふいんの森 3・4 號','博多⇄由布院⇄別府',['改特急ゆふ','改特急ゆふ','改特急ゆふ','改特急ゆふ','✓']],
+    ['かんぱち號（午餐列車）','博多 12:19 → 別府 16:59',['✓','—','—','✓','—']],
+    ['いちろく號（午餐列車）','別府 11:00 → 博多 15:47',['—','✓','—','—','✓']],
+    ['或る列車（甜品列車）','博多 10:58 ⇄ 由布院',['✓','—','—','—','—']],
+    ['ソニック','博多⇄小倉⇄別府',['每日','每日','每日','每日','每日']]
+  ];
+  function cell(v){var cls=v==='—'?'':(v.indexOf('改')===0?'warn':'ok');return '<td>'+(cls?'<span class="pill '+cls+'">'+esc(v)+'</span>':'<span class="muted">—</span>')+'</td>';}
+  return '<section class="card stack"><h3>特色列車月曆（已查 JR 九州官網）</h3><div class="tablebox"><table class="t"><thead><tr><th>列車</th><th>路線</th>'+D.map(function(d){return '<th>'+d+'</th>';}).join('')+'</tr></thead><tbody>'+
+    R.map(function(r){return '<tr><td><b>'+esc(r[0])+'</b></td><td class="small">'+esc(r[1])+'</td>'+r[2].map(cell).join('')+'</tr>';}).join('')+
+    '</tbody></table></div><ul class="small muted" style="margin:0;padding-left:18px">'+
+    '<li>第一代 = ゆふいんの森 Ⅰ世，1989 年原版車廂（1 月 13–15、18–21 日）。冇輪椅升降機。</li>'+
+    '<li>改特急ゆふ = 同時間、同停站，但係普通特急，冇服務員同車內販賣。</li>'+
+    '<li>かんぱち、いちろく、或る列車嘅日子同今次路線方向唔夾，所以冇放入行程。</li>'+
+    '<li>資料係 JR 九州 2026 年 10 月 22 日更新嘅月曆，會變。</li></ul></section>';
+}
+function tr(a,b,c){return '<tr><td>'+esc(a)+'</td><td class="mono">'+b+'</td><td class="num">'+c+'</td></tr>';}
+function tr2(a,b){return '<tr><td>'+esc(a)+'</td><td class="num">'+esc(b)+'</td></tr>';}
+function link(t,u){return '<li><a href="'+u+'" target="_blank" rel="noopener">'+esc(t)+' ↗</a></li>';}
+
+/* ---------- render ---------- */
+var app=document.getElementById('app');
+function render(){
+  var body=tab==='days'?vDays():tab==='map'?vMap():tab==='hotels'?vHotels():tab==='votes'?vVotes():tab==='tasks'?vTasks():tab==='info'?vInfo():vOverview();
+  var bar='';
+  if(editMode){
+    bar='<div class="savebar"><div class="wrap"><span class="small">'+(isDirty()?'有未儲存嘅變更。儲存之後，所有人重新開頁面就睇到。':'編輯模式：改投票決定、酒店、分工，再儲存。')+'</span><div class="row"><button class="btn small" data-act="discard">'+(isDirty()?'放棄變更':'離開編輯')+'</button><button class="btn small primary" data-act="save"'+(isDirty()?'':' disabled')+'>儲存到共享版本</button></div></div></div>';
+  }
+  app.innerHTML=masthead()+tabsBar()+'<main class="wrap panel">'+body+'</main>'+bar+(toastMsg?'<div class="toast" role="status">'+esc(toastMsg)+'</div>':'');
+}
+function toast(m){toastMsg=m;render();clearTimeout(toastTimer);toastTimer=setTimeout(function(){toastMsg='';render();},3200);}
+
+app.addEventListener('click',function(e){
+  var el=e.target.closest('[data-act]');if(!el||el.disabled)return;
+  var act=el.getAttribute('data-act'), v=el.getAttribute('data-v');
+  if(act==='tab'){tab=v;if(location.hash!=='#'+v)location.hash=v;render();window.scrollTo(0,0);return;}
+  if(act==='goday'){dayView=v;store.set('day',v);tab='days';location.hash='days';render();window.scrollTo(0,0);return;}
+  if(act==='day'){dayView=v;store.set('day',v);render();return;}
+  if(act==='mapday'){mapDay=v;store.set('mapday',v);render();return;}
+  if(act==='who'){me=v;store.set('me',v);render();return;}
+  if(act==='pick'){var key=el.getAttribute('data-vote');if(picks[key]===v)delete picks[key];else picks[key]=v;store.set('picks',picks);render();return;}
+  if(act==='claim'){var i=claims.indexOf(v);if(i>=0)claims.splice(i,1);else claims.push(v);store.set('claims',claims);render();return;}
+  if(act==='copy'){doCopy();return;}
+  if(act==='edit'){if(editMode){if(!isDirty()){editMode=false;draft=null;}}else{editMode=true;draft=clone(shared);}render();return;}
+  if(!editMode||!draft)return;
+  if(act==='decide'){var vid=el.getAttribute('data-vote');if(draft.decisions[vid]===v)delete draft.decisions[vid];else draft.decisions[vid]=v;render();return;}
+  if(act==='hchoose'){var nid=el.getAttribute('data-night');if(draft.hotelPick[nid]===v)delete draft.hotelPick[nid];else draft.hotelPick[nid]=v;render();return;}
+  if(act==='hbooked'){var nb=el.getAttribute('data-night');if(draft.hotelBooked[nb])delete draft.hotelBooked[nb];else draft.hotelBooked[nb]=true;render();return;}
+  if(act==='import'){var box=document.getElementById('import-box');importMsg=importCode(box?box.value:'');render();return;}
+  if(act==='syncme'){if(me){draft.family[me]={k:validKeys(picks),c:claims.slice(),n:cleanNotes(notes),t:todayStr()};importMsg='已加入 '+PNAME[me]+' 嘅選擇。';}render();return;}
+  if(act==='discard'){editMode=false;draft=null;importMsg='';render();return;}
+  if(act==='save'){saveShared();return;}
+});
+app.addEventListener('input',function(e){
+  var el=e.target;
+  if(el.hasAttribute('data-note')){var k=el.getAttribute('data-note');notes[k]=el.value;store.set('notes',notes);var pv=document.getElementById('summary-preview');if(pv)pv.value=buildSummary();return;}
+  if(el.getAttribute('data-tfield')==='note'&&editMode&&draft){var t=el.getAttribute('data-task');draft.tasks[t]=draft.tasks[t]||{owner:'',status:'todo',note:''};draft.tasks[t].note=el.value.slice(0,300);}
+});
+app.addEventListener('change',function(e){
+  var el=e.target, f=el.getAttribute('data-tfield');
+  if(!f||!editMode||!draft)return;
+  var t=el.getAttribute('data-task');draft.tasks[t]=draft.tasks[t]||{owner:'',status:'todo',note:''};
+  if(f==='owner'){draft.tasks[t].owner=PNAME[el.value]?el.value:'';}
+  else if(f==='status'){if(STATUS.some(function(x){return x[0]===el.value;}))draft.tasks[t].status=el.value;}
+  else if(f==='note'){draft.tasks[t].note=el.value.slice(0,300);}
+  render();
+});
+window.addEventListener('hashchange',function(){var h=(location.hash||'').slice(1);if(TABS.some(function(t){return t[0]===h;})&&h!==tab){tab=h;render();}});
+
+async function doCopy(){
+  var text=buildSummary();
+  try{await navigator.clipboard.writeText(text);toast('已複製。貼去 WhatsApp 傳俾 Clinton。');}
+  catch(err){var pv=document.getElementById('summary-preview');if(pv){pv.focus();pv.select();}toast('複製唔到，已經幫你選好文字，請手動複製。');}
+}
+
+/* ---------- publish shared version ---------- */
+function buildDocument(state){
+  var css=document.getElementById('trip-css').textContent;
+  var json=JSON.stringify(state).replace(/</g,String.fromCharCode(92)+'u003c');
+  return '<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>'+SKEL_RESET+'</style></head><body>\n'+
+    PAGE_HEAD+'\n<style id="trip-css">'+css+'</style>\n<div id="app">'+APP_FALLBACK+'</div>\n<script type="application/json" id="trip-state">'+json+SCRIPT_END+'\n<script id="trip-app">('+main.toString()+')();'+SCRIPT_END+'\n\n</body></html>';
+}
+async function saveShared(){
+  if(!artifactNs||!draft)return;
+  draft.updated=todayStr();
+  var html=buildDocument(draft);
+  try{sessionStorage.setItem('kq27:flash','saved');}catch(e){}
+  try{await artifactNs.publish(html);}
+  catch(err){
+    try{sessionStorage.removeItem('kq27:flash');}catch(e){}
+    var c=err&&err.code;
+    if(c==='conflict'){toast('啱啱有新版本，頁面會重新載入。');return;}
+    if(c==='rate_limited'){toast('儲存得太密，等一陣再試。');return;}
+    if(['not_writer','not_granted','not_declared','capability_disabled','capability_removed','consent_required'].indexOf(c)>=0){canWrite=false;editMode=false;draft=null;toast('呢個檢視只可以睇，唔可以儲存。');return;}
+    toast('儲存唔到（'+(c||'錯誤')+'），請再試一次。');
+  }
+}
+(async function initCaps(){
+  try{
+    if(!window.claude||typeof window.claude.use!=='function')return;
+    var res=await Promise.all([window.claude.use('user'),window.claude.use('artifact')]);
+    var u=res[0],a=res[1];
+    if(!a||!u)return;
+    var ok=await u.canEdit();
+    if(ok){artifactNs=a;canWrite=true;render();}
+  }catch(e){}
+})();
+
+render();
+try{if(sessionStorage.getItem('kq27:flash')==='saved'){sessionStorage.removeItem('kq27:flash');toast('已儲存共享版本。');}}catch(e){}
+})();</script>
+
+</body></html>
