@@ -211,6 +211,8 @@ table.t th,table.t td{text-align:left;padding:7px 8px;border-bottom:1px solid va
 table.t th{font-weight:700;color:var(--ink2);font-size:13px}
 table.t td.num{text-align:right;font-family:var(--f-mono);white-space:nowrap}
 .tablebox{overflow-x:auto}
+table.t tr.tot td{font-weight:700;color:var(--ink)}
+table.t tr.grand td{border-top:2px solid var(--ink3)}
 .prose{max-width:68ch}
 .prose ul{padding-left:18px;margin:6px 0}
 .prose li{margin:3px 0}
@@ -240,7 +242,7 @@ table.t td.num{text-align:right;font-family:var(--f-mono);white-space:nowrap}
 @media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
 </style>
 <div id="app"><p class="boot">載入中…</p></div>
-<script type="application/json" id="trip-state">{"v":1,"updated":"2026-11-22","decisions":{},"hotelPick":{},"hotelBooked":{},"tasks":{"t1":{"owner":"clinton","status":"todo","note":""},"t2":{"owner":"wife","status":"todo","note":""},"t3":{"owner":"wife","status":"todo","note":""},"t4":{"owner":"wife","status":"todo","note":""},"t5":{"owner":"wife","status":"todo","note":""},"t6":{"owner":"clinton","status":"todo","note":""},"t7":{"owner":"clinton","status":"todo","note":""},"t8":{"owner":"clinton","status":"todo","note":""},"t9":{"owner":"clinton","status":"todo","note":""},"t10":{"owner":"sis","status":"todo","note":""},"t11":{"owner":"sis","status":"todo","note":""},"t12":{"owner":"sis","status":"todo","note":""},"t13":{"owner":"clinton","status":"todo","note":""},"t14":{"owner":"clinton","status":"todo","note":""},"t15":{"owner":"clinton","status":"todo","note":""},"t16":{"owner":"clinton","status":"todo","note":""},"t17":{"owner":"clinton","status":"todo","note":""},"t18":{"owner":"clinton","status":"todo","note":""}},"family":{}}</script>
+<script type="application/json" id="trip-state">{"v":1,"updated":"2026-11-23","decisions":{},"hotelPick":{},"hotelBooked":{},"tasks":{"t1":{"owner":"clinton","status":"todo","note":""},"t2":{"owner":"wife","status":"todo","note":""},"t3":{"owner":"wife","status":"todo","note":""},"t4":{"owner":"wife","status":"todo","note":""},"t5":{"owner":"wife","status":"todo","note":""},"t6":{"owner":"clinton","status":"todo","note":""},"t7":{"owner":"clinton","status":"todo","note":""},"t8":{"owner":"clinton","status":"todo","note":""},"t9":{"owner":"clinton","status":"todo","note":""},"t10":{"owner":"sis","status":"todo","note":""},"t11":{"owner":"sis","status":"todo","note":""},"t12":{"owner":"sis","status":"todo","note":""},"t13":{"owner":"clinton","status":"todo","note":""},"t14":{"owner":"clinton","status":"todo","note":""},"t15":{"owner":"clinton","status":"todo","note":""},"t16":{"owner":"clinton","status":"todo","note":""},"t17":{"owner":"clinton","status":"todo","note":""},"t18":{"owner":"clinton","status":"todo","note":""}},"family":{}}</script>
 <script id="trip-app">(function main(){
 "use strict";
 var PAGE_HEAD='<title>北九州家庭遊 2027</title>\n<meta name="claude:viewport-fit-sides" content="cover">\n<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@700;900&display=swap">';
@@ -333,7 +335,7 @@ var DAYS_A=[
   items:[
    {t:'09:00',title:'退房，行李寄存酒店',mode:'步行',knee:0,p:'hakataSt',desc:''},
    {t:'09:45',title:'大濠公園',mode:'地鐵',knee:0,vote:'d5am',p:'ohori',desc:'湖邊平路一圈 2 公里，有湖邊 Starbucks。日本庭園 ¥250。選擇 B：柳川暖桌船（12 月至 2 月限定）＋蒸籠鰻魚飯，要半日。'},
-   {t:'11:30',title:'えん發酵溫熱木浴 福岡店',mode:'地鐵',knee:1,p:'en',tags:['願望清單','要訂位'],desc:'檜木粉發酵浴，私人半個室，約 90 分鐘（其中浸 15 分鐘）。地鐵赤坂站 2 號出口行 7 分鐘，5 樓。營業 11:00–21:30，電話 092-406-3378。要問：價錢、男女可唔可以同一間房。',kneeNote:'要坐低同起身。高血壓或者心臟有問題，先問醫生。媽媽可以選擇唔做，喺附近 cafe 休息。'},
+   {t:'11:30',title:'えん發酵溫熱木浴 福岡店',mode:'地鐵',knee:1,p:'en',tags:['願望清單','要訂位'],desc:'檜木粉發酵浴，私人半個室，約 90 分鐘（其中浸 15 分鐘）。地鐵赤坂站 2 號出口行 7 分鐘，5 樓。營業 11:00–21:30，電話 092-406-3378。價錢（含稅）：標準 90 分鐘 ¥6,600／人；福岡店限定情侶方案 ¥22,000／2 人，私人浴室，只可以電話預約。包浴巾、毛巾同館內服。',kneeNote:'要坐低同起身。高血壓或者心臟有問題，先問醫生。媽媽可以選擇唔做，喺附近 cafe 休息。'},
    {t:'13:15',title:'天神午餐',mode:'步行',knee:0,p:'tenjin',desc:'例如天ぷら ひらお、もつ鍋。'},
    {t:'14:30',title:'天神地下街／大丸／岩田屋 買手信',mode:'步行',knee:0,p:'tenjin',desc:'2026 年 11 月起日本改為「先付消費稅，離境時退稅」，要喺機場辦手續，預留時間（細節要再確認）。'},
    {t:'17:30',title:'返博多酒店攞行李',mode:'地鐵',knee:0,p:'hakataSt',desc:''},
@@ -355,7 +357,7 @@ var DAYS_B=[
    {t:'12:00',title:'門司港駅＋燒咖喱午餐',mode:'食',knee:0,p:'mojikoSt',desc:'門司港駅係大正時代建築（重要文化財）。燒咖喱係門司港名物。'},
    {t:'13:00',title:'門司港懷舊區',mode:'步行',knee:0,p:'bluewing',desc:'藍翼橋 13:00、14:00 開橋。舊門司三井俱樂部、關門海峽景色。'},
    {t:'15:00',title:'門司港 → 小倉 → 博多，返酒店休息',mode:'JR',knee:0,p:'hakataSt',desc:'約 1 小時。'},
-   {t:'17:30',title:'えん發酵溫熱木浴 福岡店',mode:'地鐵',knee:1,p:'en',tags:['願望清單','要訂位'],desc:'檜木粉發酵浴，私人半個室，約 90 分鐘（其中浸 15 分鐘）。地鐵赤坂站 2 號出口行 7 分鐘，5 樓。營業 11:00–21:30，最後受理 20:00，電話 092-406-3378。要問：價錢、男女可唔可以同一間房。',kneeNote:'要坐低同起身。高血壓或者心臟有問題，先問醫生。媽媽可以選擇唔做，喺酒店休息。'},
+   {t:'17:30',title:'えん發酵溫熱木浴 福岡店',mode:'地鐵',knee:1,p:'en',tags:['願望清單','要訂位'],desc:'檜木粉發酵浴，私人半個室，約 90 分鐘（其中浸 15 分鐘）。地鐵赤坂站 2 號出口行 7 分鐘，5 樓。營業 11:00–21:30，最後受理 20:00，電話 092-406-3378。價錢（含稅）：標準 90 分鐘 ¥6,600／人；福岡店限定情侶方案 ¥22,000／2 人，私人浴室，只可以電話預約。包浴巾、毛巾同館內服。',kneeNote:'要坐低同起身。高血壓或者心臟有問題，先問醫生。媽媽可以選擇唔做，喺酒店休息。'},
    {t:'19:15',title:'晚餐',mode:'食',knee:0,vote:'d4dinner',p:'nakasu',desc:'選擇：博多水炊き（雞湯鍋）、中洲屋台、もつ鍋。'}
   ]},
  cloneDay(DAYS_A[1],{id:'b3',n:3,date:'1月20日（三）',items:[
@@ -431,7 +433,7 @@ var TASKS=[
  {id:'t2',title:{a:'訂由布院旅館（1月19日，2 間房內溫泉）',b:'訂由布院旅館（1月20日，2 間房內溫泉）'},due:'2026-11-30',note:'媽媽間房要地面層或者有升降機。'},
  {id:'t3',title:{a:'訂別府旅館（1月20日）',b:'訂別府旅館（1月21日）'},due:'2026-11-30',note:''},
  {id:'t4',title:'訂 すみ劇場 むさし坐（1月18日 18:30，4 位，1 樓）',due:'2026-12-15',note:'電話 092-791-4866，可以請酒店幫手打。'},
- {id:'t5',title:{a:'訂 えん 酵素浴（1月22日 11:30）',b:'訂 えん 酵素浴（1月19日 17:30）'},due:{a:'2026-12-22',b:'2026-12-19'},note:'問價錢、男女同房、長者適唔適合。'},
+ {id:'t5',title:{a:'訂 えん 酵素浴（1月22日 11:30）',b:'訂 えん 酵素浴（1月19日 17:30）'},due:{a:'2026-12-22',b:'2026-12-19'},note:'情侶方案（¥22,000／2 人，私人浴室）只可以電話預約，其他方案可以網上預約。問埋長者適唔適合。'},
  {id:'t6',route:'a',title:'買 JR 北九州 3 日 Pass（1月19–21日）',due:'2026-12-15',note:'¥15,000／人，網上買。如果第 3 日搭巴士，就唔好買。'},
  {id:'t7',title:{a:'劃位：ゆふいんの森 1 號（1月19日）',b:'劃位：ゆふいんの森 1 號（1月20日）'},due:{a:'2026-12-19',b:'2026-12-20'},note:{a:'12 月 19 日 10:00 開賣。',b:'12 月 20 日 10:00 開賣。'}},
  {id:'t8',title:{a:'劃位：特急ゆふ 由布院→別府（1月20日）',b:'劃位：特急ゆふ 由布院→別府（1月21日）'},due:{a:'2026-12-20',b:'2026-12-21'},note:{a:'12 月 20 日 10:00 開賣。如果大家揀巴士，呢項取消。',b:'12 月 21 日 10:00 開賣。如果大家揀巴士，呢項取消。'}},
@@ -582,6 +584,7 @@ function compareCard(){
     ['特色列車','ゆふいんの森（第一代）、ソニック','ゆふいんの森（第一代）、いちろく'],
     ['大行李','留喺博多酒店','用空港宅急便寄去機場'],
     ['JR 車費（每人）','約 ¥15,000（北九州 3 日 Pass）','約 ¥34,300（包いちろく ¥21,000 同午餐）'],
+    ['預算（4 人，連機票）','約 '+hk(budgetTotals('a').total)+'（每人約 '+hk(budgetTotals('a').pp)+'）','約 '+hk(budgetTotals('b').total)+'（每人約 '+hk(budgetTotals('b').pp)+'）'],
     ['媽媽','每日都有休息時間；最後一日要行街','最後一日坐 5 小時火車，最輕鬆']
   ];
   var dec=S().decisions.route;
@@ -867,12 +870,9 @@ function vInfo(){
     tr('博多 → 由布院（ゆふいんの森 指定席）','1/19','¥6,130')+tr('由布院 → 別府（特急ゆふ 指定席）','1/20','¥2,200')+tr('別府 → 小倉（ソニック 指定席）','1/21','¥4,600')+tr('小倉 ⇄ 門司港','1/21','¥560')+tr('小倉 → 博多（ソニック 自由席）','1/21','¥2,500')+
     '<tr><th>合計</th><th></th><th style="text-align:right" class="mono">約 ¥16,000</th></tr><tr><th>北九州 3 日 Pass（2026 年 4 月價）</th><th>1/19–21</th><th style="text-align:right" class="mono">¥15,000</th></tr></tbody></table></div>'+
     '<p class="small muted" style="margin:0">除咗第一行（JR 官網價），其他係估算。Pass 每人大約慳 ¥1,000，仲可以免費劃位。如果第 3 日搭巴士，JR 只需要約 ¥13,800，就唔好買 Pass。Pass 唔包山陽新幹線（小倉↔博多）。第 1 日同第 5 日用巴士同地鐵，用 IC 卡。</p></section>';
-  if(routeView==='b')h+=budgetB();
-  else h+='<section class="card stack"><h3>預算估算（4 人）</h3><div class="tablebox"><table class="t"><thead><tr><th>項目</th><th style="text-align:right">大約</th></tr></thead><tbody>'+
-    tr2('博多酒店 2 晚 × 2 間（JR Blossom，18 日＋21 日價）','HK$5,400')+tr2('由布院旅館 1 晚 × 2 間（一泊二食）','HK$5,500–7,900')+tr2('別府旅館 1 晚 × 2 間（一泊二食）','HK$5,000–8,600')+tr2('JR 北九州 3 日 Pass × 4','¥60,000')+tr2('其他交通（巴士、西鐵、的士）','約 ¥5,000／人')+tr2('景點門票（地獄、紀念館、庭園）','約 ¥3,500／人')+tr2('えん酵素浴','要問價')+
-    '</tbody></table></div><p class="small muted" style="margin:0">酒店價錢係 Booking.com 2026 年 11 月 22 日嘅價，會變。午餐、第 1、4、5 日晚餐同手信未計。</p></section>';
+  h+=budgetCard();
   h+='<section class="card stack prose"><h3>要再確認</h3><ul>'+
-    ['列車月曆係 JR 九州 2026 年 10 月 22 日資料，訂位時再睇一次','太宰府巴士班次同車費','むさし坐 定休日、訂位方法、1 樓座位','えん 價錢、男女同房、長者適唔適合','九州鐵道紀念館入場費（¥300 定 ¥500）','地獄巡禮共通券價錢','博多酒店 1 月 21 日價錢','由布院 風の森 2 人價錢','日本新退稅制度細節'].map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+
+    ['列車月曆係 JR 九州 2026 年 10 月 22 日資料，訂位時再睇一次','太宰府巴士班次同車費','むさし坐 定休日、訂位方法、1 樓座位','えん 長者適唔適合','九州鐵道紀念館入場費（¥300 定 ¥500）','地獄巡禮共通券價錢','博多酒店 1 月 21 日價錢','由布院 風の森 2 人價錢','日本新退稅制度細節','機票實際價錢（預算用 HK Express 估算）'].map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+
     '</ul></section>';
   h+='<section class="card stack prose"><h3>參考</h3><ul>'+
     link('JR 九州 ゆふいんの森','https://www.jrkyushu.co.jp/trains/yufuinnomori/')+link('JR 九州 Rail Pass','https://www.jrkyushu.co.jp/english/railpass/railpass.html')+link('えん發酵溫熱木浴 福岡店（官網）','https://en-mokuyoku.com/en-fukuoka/')+link('波比看世界：福岡景點','https://bobbytravel.tw/fukuoka-attractions/')+
@@ -904,10 +904,58 @@ function passB(){
     '<tr><th>合計</th><th></th><th style="text-align:right" class="mono">約 ¥34,300</th></tr></tbody></table></div>'+
     '<p class="small muted" style="margin:0">JR 北九州 Pass 唔抵：いちろく 係套票，已經包車費。ゆふいんの森同いちろく係官網價，其他係估算。第 1 日同第 2 日晚用巴士同地鐵，用 IC 卡。</p></section>';
 }
-function budgetB(){
-  return '<section class="card stack"><h3>預算估算（4 人，いちろく版本）</h3><div class="tablebox"><table class="t"><thead><tr><th>項目</th><th style="text-align:right">大約</th></tr></thead><tbody>'+
-    tr2('博多酒店 2 晚 × 2 間（Oriental，18–20 日價）','HK$4,700')+tr2('由布院旅館 1 晚 × 2 間（一泊二食）','HK$5,500–7,900')+tr2('別府旅館 1 晚 × 2 間（一泊二食）','HK$5,000–8,600')+tr2('JR 車費 × 4（包いちろく午餐）','約 ¥137,000')+tr2('空港宅急便（大行李）','每件約 ¥2,000–3,000（要再確認）')+tr2('其他交通（巴士、西鐵、的士）','約 ¥4,000／人')+tr2('景點門票（地獄、紀念館）','約 ¥3,000／人')+tr2('えん酵素浴','要問價')+
-    '</tbody></table></div><p class="small muted" style="margin:0">酒店價錢係 Booking.com 2026 年 11 月 22 日嘅價，會變。第 1、2 日晚餐、第 5 日手信未計；第 5 日午餐已包喺いちろく。</p></section>';
+var BUDGET={
+ a:{title:'而家嘅版本',rows:[
+   ['博多酒店 2 晚 × 2 間',5400,'JR Blossom，18 日＋21 日價'],
+   ['由布院旅館 1 晚 × 2 間（一泊二食）',6200,'きらら Deluxe 離れ'],
+   ['別府旅館 1 晚 × 2 間（一泊二食）',7000,'松葉屋 別館'],
+   ['JR 北九州 3 日 Pass × 4',3000,'¥15,000／人'],
+   ['其他交通（巴士、西鐵、地鐵、的士）',1000,'約 ¥5,000／人'],
+   ['景點門票（地獄、紀念館、庭園）',700,'約 ¥3,500／人'],
+   ['えん酵素浴',1800,'情侶方案 ¥22,000（2 人）＋標準 ¥6,600 × 2'],
+   ['旅館以外嘅餐飲',6000,'約 ¥30,000／人，包むさし坐同水炊き晚餐'],
+   ['旅遊保險（4 人）＋eSIM',1500,'保險約 HK$1,200，eSIM 約 HK$300']
+ ],cont:3300,fly:9400,low:4500,high:2700,lowSet:'Mars Garden、きらら、なごみ月',highSet:'Blossom、泰葉、昭和園'},
+ b:{title:'いちろく版本',rows:[
+   ['博多酒店 2 晚 × 2 間（連住）',4700,'Oriental，18–20 日價'],
+   ['由布院旅館 1 晚 × 2 間（一泊二食）',6200,'きらら Deluxe 離れ'],
+   ['別府旅館 1 晚 × 2 間（一泊二食）',7300,'松葉屋 別館，21 日價'],
+   ['JR 車費 × 4',6900,'約 ¥34,300／人，包いちろく ¥21,000 同午餐'],
+   ['其他交通（巴士、西鐵、地鐵、的士）',800,'約 ¥4,000／人'],
+   ['空港宅急便（大行李）',400,'約 3 件 × ¥2,500（要再確認）'],
+   ['景點門票（地獄、紀念館）',600,'約 ¥3,000／人'],
+   ['えん酵素浴',1800,'情侶方案 ¥22,000（2 人）＋標準 ¥6,600 × 2'],
+   ['旅館以外嘅餐飲',5400,'約 ¥27,000／人；第 5 日午餐已包喺いちろく'],
+   ['旅遊保險（4 人）＋eSIM',1500,'保險約 HK$1,200，eSIM 約 HK$300']
+ ],cont:3600,fly:9400,low:4300,high:2600,lowSet:'Mars Garden、きらら、なごみ月',highSet:'Oriental、泰葉、昭和園'}
+};
+function budgetTotals(r){
+  var b=BUDGET[r], sub=b.rows.reduce(function(a,x){return a+x[1];},0), noFly=sub+b.cont, total=noFly+b.fly;
+  return {sub:sub,noFly:noFly,total:total,pp:Math.round(total/400)*100};
+}
+function budgetCard(){
+  var b=BUDGET[routeView], t=budgetTotals(routeView), diff=Math.abs(budgetTotals('b').total-budgetTotals('a').total);
+  function row(a,v,n,cls){return '<tr'+(cls?' class="'+cls+'"':'')+'><td>'+esc(a)+(n?'<div class="small muted" style="font-weight:400">'+esc(n)+'</div>':'')+'</td><td class="num">'+esc(v)+'</td></tr>';}
+  var notesList=[
+    '兩個版本相差約 '+hk(diff)+'：いちろく版本貴啲，主要係いちろく 車票每人 ¥21,000。',
+    '匯率用 ¥20 = HK$1。2026 年 11 月 11 日 HK$1 約換 ¥20.4，所以日圓項目大約估高咗 2%。',
+    '酒店用暫定選擇，價錢係 Booking.com 2026 年 11 月 22 日嘅價，會變。全部揀最平（'+b.lowSet+'）大約少 '+hk(b.low)+'；全部揀最貴（'+b.highSet+'）大約多 '+hk(b.high)+'。なごみ月部分樓層只有樓梯，媽媽間房要求低層。',
+    '機票：HK Express 同日子 Lite 票價唔包寄艙行李。07:50 嗰班可能係其他航空公司；已經買咗就用實際價錢。',
+    'えん：Clinton＋Charlotte 用情侶方案（私人浴室，只可以電話預約），Lorraine 同媽媽用標準 90 分鐘。媽媽唔做就少約 HK$330。',
+    '保險：如果要包媽媽嘅舊患，保費可能貴啲。',
+    '未計：手信、購物、旅館晚餐嘅飲品。'
+  ];
+  return '<section class="card stack"><div class="section-head"><h3>預算估算（4 人，'+esc(b.title)+'）</h3><span class="small muted">2026 年 11 月 23 日估算</span></div>'+
+    '<div class="stats">'+stat(hk(t.total),'4 人合計（連機票）')+stat(hk(t.noFly),'4 人合計（唔計機票）')+stat(hk(t.pp),'每人（連機票）')+'</div>'+
+    '<div class="tablebox"><table class="t"><thead><tr><th>項目</th><th style="text-align:right">大約</th></tr></thead><tbody>'+
+    b.rows.map(function(r){return row(r[0],hk(r[1]),r[2]);}).join('')+
+    row('小計',hk(t.sub),'','tot')+
+    row('預備金 10%',hk(b.cont),'意外開支','')+
+    row('合計（唔計機票）',hk(t.noFly),'','tot grand')+
+    row('機票 × 4（2 件寄艙行李）',hk(b.fly),'HK Express 來回每人約 US$257（約 HK$2,000），加 2 件行李每件約 HK$700','')+
+    row('合計（連機票）',hk(t.total),'','tot grand')+
+    row('每人','約 '+hk(t.pp),'','tot')+
+    '</tbody></table></div><ul class="small muted" style="margin:0;padding-left:18px">'+notesList.map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ul></section>';
 }
 function tr(a,b,c){return '<tr><td>'+esc(a)+'</td><td class="mono">'+b+'</td><td class="num">'+c+'</td></tr>';}
 function tr2(a,b){return '<tr><td>'+esc(a)+'</td><td class="num">'+esc(b)+'</td></tr>';}
